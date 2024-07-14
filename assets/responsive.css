@@ -1,0 +1,64 @@
+@media (width <=615px) {
+  .row {
+    gap: 0;
+  }
+
+  label,
+  .addTodos {
+    display: inline-block;
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  .addTodos {
+    padding: 0.5rem;
+  }
+
+  .modalContent > i {
+    font-size: 2rem;
+    right: 1%;
+    top: 1%;
+  }
+}
+@media (width <= 565px) {
+  .header {
+    padding: 0rem 1rem;
+  }
+
+  :is(.logInBtns, .logOutBtns) > a {
+    padding: 10px 15px;
+  }
+
+  .grid-two-cols {
+    grid-template-columns: 1fr;
+  }
+  .formBtns > a {
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 10px;
+  }
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .signUpContainer,
+  .logInContainer {
+    width: 95% ;
+  }
+
+  /*!=============== SWEAT ALERT STYLING ===============*/
+
+  .sweatPopup {
+    width: 90%;
+  }
+  .sweatTitle {
+    font-size: 2.5rem !important;
+  }
+  .sweatPara {
+    font-size: 1.6rem !important;
+  }
+  .sweatBtn {
+    font-size: 1.3rem !important;
+  }
+}

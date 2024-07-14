@@ -1,0 +1,427 @@
+/*!========== common use css ==========*/
+@font-face {
+  font-family: "jost";
+  src: url(./Jost-Regular.ttf);
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url(./Poppins-Regular.ttf);
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  text-decoration: none !important;
+  list-style: none;
+  scroll-behavior: smooth;
+  font-family: "jost";
+  text-transform: capitalize;
+}
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.main-container,
+.header {
+  max-width: 1440px;
+}
+
+.main-container {
+  margin-top: 7rem;
+}
+
+.section {
+  padding: 2rem 5rem;
+}
+
+body {
+  background: linear-gradient(to bottom, rgb(187, 186, 186), #313131);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.formSignUpBtn,
+.formLogInBtn {
+  font-family: "poppins", sans-serif;
+}
+
+/*!========== website theme ==========*/
+
+:root {
+  --mainColor1: rgb(55, 32, 81);
+  --mainColor2: rgb(210, 149, 232);
+  --mainColor3: rgb(68, 46, 107);
+  --bg-gradient: linear-gradient(150deg, var(--mainColor1), var(--mainColor2));
+  --bg-gradient2: linear-gradient(to bottom, rgb(86, 63, 114), rgb(45, 23, 71));
+  --btn-bg: rgb(207, 159, 241);
+  --black: #000;
+  --white: #fff;
+}
+
+/*!========== ReuseAble Code ==========*/
+
+/*todo===== all flex properties =====*/
+
+.d-flex {
+  display: flex;
+}
+
+/*?=== justify content properties ===*/
+
+.jc-center {
+  justify-content: center;
+}
+.jc-start {
+  justify-content: start;
+}
+.jc-end {
+  justify-content: end;
+}
+.jc-between {
+  justify-content: space-between;
+}
+.jc-evenly {
+  justify-content: space-evenly;
+}
+.jc-around {
+  justify-content: space-around;
+}
+
+/*?=== aling items properties ===*/
+
+.al-center {
+  align-items: center;
+}
+.al-start {
+  align-items: start;
+}
+.al-end {
+  align-items: end;
+}
+
+/*?=== flex directions properties ===*/
+
+.dir-col {
+  flex-direction: column;
+}
+.dir-col-reverse {
+  flex-direction: column-reverse;
+}
+
+/*todo===== all grid properties =====*/
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/*?=== template columns properties ===*/
+
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-three-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-four-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/*?=== justify items properties ===*/
+
+.ji-center {
+  justify-items: center;
+}
+.ji-start {
+  justify-items: start;
+}
+.ji-end {
+  justify-items: end;
+}
+
+/*todo===== all txt properties =====*/
+
+.txt-up {
+  text-transform: uppercase;
+}
+.txt-cap {
+  text-transform: capitalize;
+}
+.txt-center {
+  text-align: center;
+}
+
+.txt-none {
+  text-transform: none;
+}
+.bold {
+  font-weight: bold;
+}
+
+/*todo===== all position properties =====*/
+
+.p-relative {
+  position: relative;
+}
+.p-absolute {
+  content: "";
+  position: absolute;
+}
+
+/*todo===== all other properties =====*/
+
+.d-none {
+  display: none;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+.m-auto {
+  margin: auto;
+}
+.pointer {
+  cursor: pointer;
+}
+.border-none {
+  border: none;
+}
+.radius-50per {
+  border-radius: 5%;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
+}
+.transition-3ms {
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+
+.transition-1ms {
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+}
+.btn {
+  border: none;
+  outline: none;
+}
+
+/*!========== drop up css ==========*/
+.drop-up {
+  bottom: 3%;
+  right: 4%;
+}
+.drop-up a i {
+  font-size: 2.5rem;
+  width: 5rem;
+  height: 5rem;
+  background: var(--bg-gradient);
+  color: var(--white);
+  animation-name: border-animation;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 2.5s;
+}
+@keyframes border-animation {
+  0%,
+  100% {
+    border-radius: 76% 24% 58% 42%/17% 76% 24% 83%;
+    -webkit-border-radius: 76% 24% 58% 42%/17% 76% 24% 83%;
+    -moz-border-radius: 76% 24% 58% 42%/17% 76% 24% 83%;
+    -ms-border-radius: 76% 24% 58% 42%/17% 76% 24% 83%;
+    -o-border-radius: 76% 24% 58% 42%/17% 76% 24% 83%;
+  }
+  50% {
+    border-radius: 30%70%70%30%/30%30%70%70%;
+    -webkit-border-radius: 30%70%70%30%/30%30%70%70%;
+    -moz-border-radius: 30%70%70%30%/30%30%70%70%;
+    -ms-border-radius: 30%70%70%30%/30%30%70%70%;
+    -o-border-radius: 30%70%70%30%/30%30%70%70%;
+    -webkit-border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  }
+}
+/*!=============== HEADAER SECTION ===============*/
+
+header {
+  background-color: #f8f6f6;
+  padding: 0rem 3rem;
+  margin-bottom: 20px;
+  color: var(--white);
+  font-size: 2.5rem;
+}
+
+.peddingRight {
+  padding-right: 0% !important;
+}
+
+header > a > img {
+  height: 5rem;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.header :is(.logInBtns, .logOutBtns) > a {
+  background-color: var(--btn-bg);
+  color: var(--mainColor3);
+  border: 1px solid transparent;
+}
+.header > :is(.logInBtns, .logOutBtns) > a:hover {
+  background-color: var(--mainColor3);
+  color: var(--btn-bg);
+  border: 1px solid var(--btn-bg);
+}
+
+:is(.logInBtns, .logOutBtns) > a {
+  font-size: 2rem;
+  padding: 10px 20px;
+  border: 1px solid var(--mainColor1);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.header > .logOutBtns > a {
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+}
+.header > .logInBtns {
+  margin-block: 1rem;
+  gap: 1rem;
+}
+.header .logOutBtns > a {
+  background-color: var(--mainColor3);
+  color: var(--btn-bg);
+}
+.header .logOutBtns > a:hover {
+  background-color: var(--btn-bg);
+  color: var(--mainColor3);
+  border: 1px solid transparent;
+}
+.header .logOutBtns > a:nth-child(2):hover {
+  background-color: #d33;
+  color: white;
+}
+
+/*!=============== FORMS SECTION ===============*/
+:is(.logInBtns, .logOutBtns) > a,
+.formLogInBtn,
+.formSignUpBtn {
+  background-color: var(--mainColor3);
+  color: white;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  font-weight: 500;
+}
+:is(.logInBtns, .logOutBtns) > a:hover,
+.formLogInBtn:hover,
+.formSignUpBtn:hover {
+  background-color: rgb(95, 64, 150);
+}
+
+/*!=============== mainContainer section starts ===============*/
+.vh {
+  height: 100vh;
+}
+.per {
+  height: 100%;
+}
+
+.logInContainer {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.logInContainer {
+  width: 500px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 50px 20px;
+  background-color: #fffefe;
+}
+
+.logInContainer {
+  gap: 2rem;
+}
+
+.logInContainer > .heading{
+  padding-bottom: 1rem;
+}
+
+:is(.logInContainer, .signUpContainer) input {
+  width: 100%;
+  padding: 10px 10px;
+  font-size: 1.6rem;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:is(.logInContainer, .signUpContainer) input,
+.formSignUpBtn,
+.formLogInBtn {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.formSignUpBtn,
+.formLogInBtn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/*!=============== SWEAT ALERT STYLING ===============*/
+
+.sweatPopup {
+  width: 450px;
+}
+.sweatTitle {
+  font-size: 2.5rem !important;
+}
+.sweatPara {
+  font-size: 1.7rem !important;
+}
+.sweatBtn {
+  font-size: 1.4rem !important;
+}
