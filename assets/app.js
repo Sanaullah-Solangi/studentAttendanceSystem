@@ -1,5 +1,29 @@
+let mainContainer = document.querySelector(".main-container");
+let sideBar = document.querySelector(".sideBar-container");
+let sideBarHeader = document.querySelector(".sideBar-header > a");
+let toggleBtns = document.querySelector(".toggleBtns");
+let cancelBtn = document.querySelector(".toggleBtns > .cancel");
+let barBtn = document.querySelector(".toggleBtns > .bar");
+let angle = document.querySelector(".angle");
+let copyWrite = document.querySelector(".copyWrite");
+let sideBarNav = document.querySelectorAll(".sideBar-nav > li");
 let formDataCompleted = true; // FLAG TO CHECK EMPTY INPUT
-//* FUNCTION TO LOG IN
+
+//! FUNCTION TO TOGGLE THE VISIBILITY OF THE SIDEBAR
+function showSideBar() {
+  mainContainer.classList.add("show");
+  copyWrite.classList.remove("d-none");
+  angle.classList.remove("opacity0");
+}
+
+function hideSideBar() {
+  if (mainContainer.classList.contains("show")) {
+    mainContainer.classList.remove("show");
+    copyWrite.classList.add("d-none");
+    angle.classList.add("opacity0");
+  }
+}
+//! FUNCTION TO LOG IN
 function logIn() {
   //*  LOGIN ELEMENTS
   let adminId = "admin";
@@ -45,9 +69,9 @@ function logIn() {
         icon: "success",
       });
 
-      //   setTimeout(() => {
-      //     location.href = "../board.html";
-      //   }, 1400);
+      setTimeout(() => {
+        location.href = "../dashBoard.html";
+      }, 1400);
     } else if (emailFlag && !passwordFlag) {
       Swal.fire({
         customClass: {

@@ -46,7 +46,7 @@ html {
 }
 
 .section {
-  padding: 2rem 5rem;
+  padding: 2rem;
 }
 
 h1,
@@ -191,6 +191,11 @@ h6,
   display: none;
 }
 
+.opacity0 {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .d-inline-block {
   display: inline-block;
 }
@@ -315,10 +320,10 @@ header > a > img {
 }
 .header > .logOutBtns > a {
   border-radius: 0px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
 }
 .header > .logInBtns {
   margin-block: 1rem;
@@ -361,7 +366,7 @@ header > a > img {
   background-color: var(--hover);
 }
 
-/*!=============== mainContainer section starts ===============*/
+/*!=============== MAINCONTAINER SECTION STARTS ===============*/
 .vh {
   height: 100vh;
 }
@@ -371,10 +376,10 @@ header > a > img {
 
 .logInContainer {
   border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
 }
 
 .logInContainer {
@@ -428,19 +433,54 @@ header > a > img {
   gap: 1rem;
 }
 
-:is(.sideBar-header, .hero-header) > a {
-  font-family: "poppins", sans-serif;
+.sideBar-header > i,
+.hero-header > .angle {
+  top: 50%;
+  height: 100%;
+  width: 65px;
+  background-color: var(--hover);
+  transform: translateY(-50%);
+  -webkit-transform:;
+  -moz-transform:;
+  -ms-transform:;
+  -o-transform:;
 }
 
-.sideBar-header > i {
-  font-size: 2rem;
+.hero-container {
+  padding-left: 55px;
+}
+
+:is(.sideBar-header, .hero-header) > a,
+.copyWrite {
+  font-family: "poppins", sans-serif;
+  white-space: nowrap;
 }
 
 /*!=============== SIDEBAR STYLING ===============*/
 .sideBar-container {
   background-color: var(--mainColor3);
-  flex: 1 1 20%;
+  width: 55px;
   font-size: 1.7rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.show > .sideBar-container {
+  width: 350px;
+}
+
+.sideBar-header > img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.sideBar-header > i {
+  right: 0%;
+}
+.toggleBtns {
+  right: 5%;
+  top: 4%;
+  font-size: 3rem;
 }
 
 .sideBar-nav {
@@ -448,7 +488,7 @@ header > a > img {
 }
 
 .sideBar-nav > li {
-  gap: 2rem;
+  gap: 2.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   padding: 1.5rem 0 1.5rem 2rem;
 }
@@ -464,16 +504,6 @@ header > a > img {
 .sideBar-nav > li > i {
   font-size: 1.8rem;
 }
-.sideBar-nav > li:last-child > i {
-  background-color: white;
-  color: var(--mainColor3);
-  width: 3rem;
-  height: 3rem;
-}
-
-.sideBar-nav > li:last-child:hover > i {
-  color: var(--red-hover);
-}
 
 .sideBar-container > :is(h4, p) {
   padding-left: 2rem;
@@ -481,27 +511,30 @@ header > a > img {
 
 /*!=============== DASHBOARD STYLING ===============*/
 .hero-container {
-  flex: 1 1 80%;
+  flex: 1 1 75%;
 }
 
-.dashBoard-content {
-  gap: 1rem;
+.dashBoard-header > .angle {
+  left: 0;
 }
 
-.dashBoard-content > .grid {
+.dashBoard-content > .dashBoard-cards {
   margin-top: 3rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .dashBoard-item {
+  flex: 1 1 23%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 1rem 2rem;
   color: white;
   background-color: var(--mainColor3);
   border-radius: 1rem;
-  -webkit-border-radius: ;
-  -moz-border-radius: ;
-  -ms-border-radius: ;
-  -o-border-radius: ;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 .dashBoard-item > .itemHeader {
   gap: 1rem;
@@ -528,23 +561,29 @@ header > a > img {
   border: 1px solid red;
   font-size: 1.8rem;
 }
-.studentsData-item >span{
+.studentsData-item > span {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 :not(.studentsData-item:first-child) {
   border-left: none;
 }
 
-.serialNumber,.rollNumber{
-  flex: 1 1 2%;
+.serialNumber,
+.rollNumber {
+  flex: 1 1 14%;
 }
 
-.studentsName,.fatherName,.courses{
-  flex: 1 1 20%;
+.batches,
+.timeTable,
+.feesStatus,
+.eleminateBtns {
+  flex: 1 1 7%;
 }
 
-.courses{
-  /* flex: 1 1 15%; */
+.studentsName,
+.fatherName,
+.courses {
+  flex: 1 1 35%;
 }
 
 /*!=============== SWEAT ALERT STYLING ===============*/

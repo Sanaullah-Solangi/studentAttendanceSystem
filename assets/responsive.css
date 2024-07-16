@@ -1,3 +1,40 @@
+@media (width <=1000px) {
+  .show > .sideBar-container {
+    width: 450px;
+  }
+
+  .hero-header > .angle,
+  .sideBar-header > i {
+    display: flex;
+  }
+}
+
+@media (width <=980px) {
+  .dashBoard-item {
+    flex: 1 1 30%;
+  }
+}
+
+@media (width <=800px) {
+  .sideBar-container {
+    width: 0%;
+  }
+
+  .show > .sideBar-container {
+    width: 450px;
+  }
+
+  .hero-container {
+    padding-left: 0px;
+  }
+}
+
+@media (width <=740px) {
+  .dashBoard-item {
+    flex: 1 1 40%;
+  }
+}
+
 @media (width <=615px) {
   .row {
     gap: 0;
@@ -21,6 +58,7 @@
     top: 1%;
   }
 }
+
 @media (width <= 565px) {
   .header {
     padding: 0rem 1rem;
@@ -44,7 +82,7 @@
 
   .signUpContainer,
   .logInContainer {
-    width: 95% ;
+    width: 95%;
   }
 
   /*!=============== SWEAT ALERT STYLING ===============*/
@@ -60,5 +98,17 @@
   }
   .sweatBtn {
     font-size: 1.3rem !important;
+  }
+}
+
+@media (width <=502px) {
+  .dashBoard-item {
+    flex: 1 1 50%;
+  }
+}
+
+@media (width <=465px) {
+  .show > .sideBar-container {
+    width: 100%;
   }
 }

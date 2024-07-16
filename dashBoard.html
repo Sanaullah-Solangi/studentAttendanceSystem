@@ -29,68 +29,77 @@
     <title>Dash Board</title>
   </head>
   <body>
-    <div class="main-container m-auto d-flex vh">
+    <div class="main-container m-auto d-flex vh p-relative">
       <!--!=============== SIDEBAR CONTAINER ===============-->
-      <div class="sideBar-container">
+      <div
+        class="sideBar-container p-absolute h-100 transition-3ms"
+        onmouseover="showSideBar()"
+        onmouseleave="hideSideBar()"
+      >
         <!--todo======= SIDEBAR HEADER =======-->
-        <div class="sideBar-header d-flex al-center">
-          <i class="fa-solid fa-user-check white"></i>
+        <div class="sideBar-header transition-3ms d-flex al-center p-relative">
+          <img src="./assets/images/logo.png" alt="" />
           <a class="white" href="#">Sani Attendance System</a>
+          <i
+            onclick="hideSideBar()"
+            class="fa-solid fa-angle-left angle p-absolute white d-flex al-center jc-center pointer d-none"
+          ></i>
         </div>
 
         <!--todo======= SIDEBAR NAVIGATIONS =======-->
         <ul class="sideBar-nav d-flex al-start jc-center dir-col">
           <li class="d-flex al-center w-100 white pointer transition-1ms">
-            <i class="fa-solid fa-gauge"></i>
-            <a class="white" href="./dashBoard.html">Dashboard</a>
+            <i class="fa-solid fa-house-user"></i>
+            <a class="white w-100" href="./dashBoard.html">Dashboard</a>
           </li>
           <li class="d-flex al-center w-100 white pointer transition-1ms">
             <i class="fa-solid fa-clipboard-user"></i>
-            <a class="white" href="#attendance">Attendance</a>
+            <a class="white w-100" href="#attendance">Attendance</a>
           </li>
           <li class="d-flex al-center w-100 white pointer transition-1ms">
             <i class="fa-solid fa-user-graduate"></i>
-            <a class="white" href="./studentsData.html"> Students</a>
+            <a class="white w-100" href="./studentsData.html">Students</a>
           </li>
           <li class="d-flex al-center w-100 white pointer transition-1ms">
             <i class="fa-solid fa-landmark"></i>
-            <a class="white" href="#classes"> Classes</a>
+            <a class="white w-100" href="#classes"> Classes</a>
           </li>
           <li class="d-flex al-center w-100 white pointer transition-1ms">
             <i class="fa-solid fa-user-tie"></i>
-            <a class="white" href="#users"> Users</a>
+            <a class="white w-100" href="#users"> Users</a>
           </li>
           <li class="d-flex al-center w-100 white pointer transition-1ms">
             <i class="fa-solid fa-arrow-right-arrow-left"></i>
-            <a class="white" href="#users">shifts</a>
+            <a class="white w-100" href="#users">shifts</a>
           </li>
           <li class="d-flex al-center w-100 white pointer transition-1ms">
-            <i
-              class="fa-solid fa-right-from-bracket d-flex jc-center al-center radius-50per"
-            ></i>
-            <a class="white" href="#users">Log Out</a>
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <a class="white w-100" href="javascript:void(0)">log&nbsp;out</a>
           </li>
         </ul>
 
         <!--todo======= SIDEBAR COPYRIGHT =======-->
-        <h4 class="txt white">Welcome to the Dashboard</h4>
-        <p class="txt-center white">© 2024 Sanaullah. All rights reserved.</p>
+        <p class="copyWrite transition-3ms white d-none">
+          © 2024 Sanaullah. All rights reserved.
+        </p>
       </div>
       <!--!=============== DASHBOARD CONTAINER ===============-->
       <div class="dashBoard-container hero-container">
         <!--todo======= DASHBOARD HEADER =======-->
         <div
-          class="dashBoard-header hero-header d-flex al-center jc-end peddingRight"
+          class="dashBoard-header hero-header d-flex al-center jc-end peddingRight p-relative"
         >
           <a href="#" class="black bold">admin</a>
           <i class="fa-solid fa-user"></i>
+
+          <i class="fa-solid fa-angle-right angle white al-center jc-center h-100 p-absolute d-none" onclick="showSideBar()"></i>
         </div>
         <!--todo======= DASHBOARD CONTENT =======-->
         <div class="dashBoard-content section">
           <!--?=== DASHBOARD HEADING ===-->
           <h1>dashboard</h1>
           <!--?=== DASHBOARD CONTENT GRID ===-->
-          <div class="grid grid-four-cols">
+          <div class="dashBoard-cards d-flex jc-center">
             <!--=== ATTENDANCE BOX ===-->
             <div
               class="dashBoard-item transition-1ms attendanceBox d-flex dir-col jc-center al-start"
