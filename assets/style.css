@@ -9,6 +9,10 @@
   src: url(./Poppins-Regular.ttf);
 }
 
+.poppins {
+  font-family: "poppins", sans-serif;
+}
+
 * {
   margin: 0%;
   padding: 0%;
@@ -16,7 +20,7 @@
   text-decoration: none !important;
   list-style: none;
   scroll-behavior: smooth;
-  font-family: "poppins";
+  font-family: "jost";
   text-transform: capitalize;
 }
 .black {
@@ -24,7 +28,7 @@
 }
 
 .white {
-  color: white;
+  color: white !important;
 }
 
 html {
@@ -38,14 +42,11 @@ html {
 
 .main-container {
   margin-top: 7rem;
+  flex-wrap: wrap;
 }
 
 .section {
   padding: 2rem 5rem;
-}
-
-body {
-  background: linear-gradient(to bottom, rgb(187, 186, 186), #313131);
 }
 
 h1,
@@ -70,6 +71,8 @@ h6,
   --btn-bg: rgb(207, 159, 241);
   --black: #000;
   --white: #fff;
+  --hover: rgb(95, 64, 150);
+  --red-hover: #d33;
 }
 
 /*!========== ReuseAble Code ==========*/
@@ -207,11 +210,11 @@ h6,
   border: none;
 }
 .radius-50per {
-  border-radius: 5%;
-  -webkit-border-radius: 5%;
-  -moz-border-radius: 5%;
-  -ms-border-radius: 5%;
-  -o-border-radius: 5%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 .transition-3ms {
   transition: all 0.3s linear;
@@ -278,7 +281,7 @@ header {
 }
 
 .peddingRight {
-  padding-right: 0% !important;
+  padding-right: 2rem !important;
 }
 
 header > a > img {
@@ -336,6 +339,10 @@ header > a > img {
 }
 
 /*!=============== FORMS SECTION ===============*/
+.logInMainContainer {
+  background: linear-gradient(to bottom, rgb(187, 186, 186), #313131);
+}
+
 :is(.logInBtns, .logOutBtns) > a,
 .formLogInBtn,
 .formSignUpBtn {
@@ -351,7 +358,7 @@ header > a > img {
 :is(.logInBtns, .logOutBtns) > a:hover,
 .formLogInBtn:hover,
 .formSignUpBtn:hover {
-  background-color: rgb(95, 64, 150);
+  background-color: var(--hover);
 }
 
 /*!=============== mainContainer section starts ===============*/
@@ -382,26 +389,28 @@ header > a > img {
   gap: 2rem;
 }
 
-.logInContainer > .heading{
+.logInContainer > .heading {
   padding-bottom: 1rem;
 }
 
 :is(.logInContainer, .signUpContainer) input {
   width: 100%;
   padding: 10px 10px;
-  font-size: 1.6rem;
+  font-size: 1.6rems;
   color: black;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-
+:is(.logInContainer, .signUpContainer) input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
 :is(.logInContainer, .signUpContainer) input,
 .formSignUpBtn,
 .formLogInBtn {
   border-radius: 20px;
-  -webkit-border-radius:;
-  -moz-border-radius:;
-  -ms-border-radius:;
-  -o-border-radius:;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 .formSignUpBtn,
 .formLogInBtn {
@@ -409,6 +418,133 @@ header > a > img {
   padding: 10px;
   font-size: 1.8rem;
   font-weight: bold;
+}
+/*!=============== SIMILAR STYLING IN SIDEBAR & HERO CONTAINERS ===============*/
+.sideBar-header,
+.hero-header {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 1.8rem;
+  padding: 2rem 2rem;
+  gap: 1rem;
+}
+
+:is(.sideBar-header, .hero-header) > a {
+  font-family: "poppins", sans-serif;
+}
+
+.sideBar-header > i {
+  font-size: 2rem;
+}
+
+/*!=============== SIDEBAR STYLING ===============*/
+.sideBar-container {
+  background-color: var(--mainColor3);
+  flex: 1 1 20%;
+  font-size: 1.7rem;
+}
+
+.sideBar-nav {
+  margin: 3rem 0;
+}
+
+.sideBar-nav > li {
+  gap: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 1.5rem 0 1.5rem 2rem;
+}
+
+.sideBar-nav > li:hover {
+  background-color: var(--hover);
+}
+
+.sideBar-nav > li:last-child:hover {
+  background-color: var(--red-hover);
+}
+
+.sideBar-nav > li > i {
+  font-size: 1.8rem;
+}
+.sideBar-nav > li:last-child > i {
+  background-color: white;
+  color: var(--mainColor3);
+  width: 3rem;
+  height: 3rem;
+}
+
+.sideBar-nav > li:last-child:hover > i {
+  color: var(--red-hover);
+}
+
+.sideBar-container > :is(h4, p) {
+  padding-left: 2rem;
+}
+
+/*!=============== DASHBOARD STYLING ===============*/
+.hero-container {
+  flex: 1 1 80%;
+}
+
+.dashBoard-content {
+  gap: 1rem;
+}
+
+.dashBoard-content > .grid {
+  margin-top: 3rem;
+}
+
+.dashBoard-item {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  color: white;
+  background-color: var(--mainColor3);
+  border-radius: 1rem;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
+}
+.dashBoard-item > .itemHeader {
+  gap: 1rem;
+}
+
+.dashBoard-item > .itemHeader > i {
+  font-size: 1.5rem;
+}
+.dashBoard-item > .itemHeader > .dashBoard-item-heading {
+  font-size: 1.7rem;
+}
+.dashBoard-item > .count {
+  font-size: 3rem;
+}
+
+.dashBoard-item:hover {
+  background-color: var(--hover);
+}
+
+/*!=============== STUDENTS DATA SECTION ===============*/
+
+.studentsData-item {
+  flex: 1 1 10%;
+  border: 1px solid red;
+  font-size: 1.8rem;
+}
+.studentsData-item >span{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+:not(.studentsData-item:first-child) {
+  border-left: none;
+}
+
+.serialNumber,.rollNumber{
+  flex: 1 1 2%;
+}
+
+.studentsName,.fatherName,.courses{
+  flex: 1 1 20%;
+}
+
+.courses{
+  /* flex: 1 1 15%; */
 }
 
 /*!=============== SWEAT ALERT STYLING ===============*/
