@@ -29,7 +29,7 @@
     <title>Student Data Overview</title>
   </head>
   <body>
-    <div class="main-container m-auto d-flex per p-relative">
+    <div class="main-container m-auto d-flex vh p-relative">
       <!--!=============== SIDEBAR CONTAINER ===============-->
       <div
         class="sideBar-container p-fixed h-100 transition-3ms"
@@ -83,6 +83,7 @@
           © 2024 Sanaullah. All rights reserved.
         </p>
       </div>
+
       <!--!=============== STUDENTS DETAILS CONTAINER ===============-->
       <div class="studentsDetails-container hero-container">
         <!--todo======= STUDENTS DETAILS HEADER =======-->
@@ -100,7 +101,15 @@
         <!--todo======= STUDENTS DETAILS CONTENT =======-->
         <div class="studentDetails-content section">
           <!--?=== STUDENT DETAILS HEADING ===-->
-          <h1 class="studentDetails-mainHeading m-auto">student details</h1>
+          <h1
+            class="studentDetails-mainHeading m-auto d-flex al-center jc-between"
+          >
+            student details
+            <i
+              onclick="showModalAndHideUls()"
+              class="fa-solid fa-pen-to-square editBtn white pointer"
+            ></i>
+          </h1>
 
           <!--?=== STUDENTS DETAILS ===-->
           <div class="studentDetails m-auto p-relative">
@@ -108,29 +117,31 @@
             <div class="categoryHeadingsContainer d-flex w-100">
               <!--todo=== PERSONAL DETAILS ===-->
               <h2
-                onclick="toggleStudentDetails(event)"
-                class="personalDetailsHeading categoryHeading txt-center active transition-1ms pointer d-flex jc-center al-center"
+                onclick="setActiveHeading(event)"
+                class="personalDetailsHeading categoryHeading detailsCategoryHeading txt-center active transition-1ms pointer d-flex jc-center al-center"
               >
                 <i class="fa-solid fa-person"></i> personal details
               </h2>
               <!--todo=== EDUCATIONS DETAILS ===-->
               <h2
-                onclick="toggleStudentDetails(event)"
-                class="educationalDetailsHeading categoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
+                onclick="setActiveHeading(event)"
+                class="educationalDetailsHeading categoryHeading detailsCategoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
               >
                 <i class="fa-solid fa-school"></i> educational details
               </h2>
               <!--todo=== CONTACT DETAILS ===-->
               <h2
-                onclick="toggleStudentDetails(event)"
-                class="contactDetailsHeading categoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
+                onclick="setActiveHeading(event)"
+                class="contactDetailsHeading categoryHeading detailsCategoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
               >
                 <i class="fa-solid fa-address-book"></i> contact details
               </h2>
             </div>
 
             <!--!=== CATEGORY DETAILS CONTAINER ===-->
-            <div class="categoryDetailsContainer transition-3ms d-flex p-absolute">
+            <div
+              class="categoryDetailsContainer transition-3ms d-flex p-absolute"
+            >
               <!--?=== PERSONAL DETAILS ===-->
               <div class="personalDetails categoryDetails transition-3ms">
                 <!--todo======= ROW 1 =======-->
@@ -209,6 +220,7 @@
                     <p class="value">5 jan 2000</p>
                   </div>
                 </div>
+
                 <!--todo======= ROW 3 =======-->
                 <div class="row grid grid-two-cols al-center">
                   <!--?=== COL 1 ===-->
@@ -238,7 +250,7 @@
                   </div>
 
                   <!--?=== COL 2 ===-->
-                  <div class="col studentName w-100 h-100">
+                  <div class="col mobileNumber w-100 h-100">
                     <p class="label">mobile number</p>
                     <p class="value">03102004654</p>
                   </div>
@@ -247,13 +259,13 @@
                 <!--todo======= ROW 2 =======-->
                 <div class="row grid grid-two-cols al-center">
                   <!--?=== COL 1 ===-->
-                  <div class="col studentName w-100 h-100">
-                    <p class="label">emergency contact number</p>
+                  <div class="col emergencyNumber w-100 h-100">
+                    <p class="label">emergency number</p>
                     <p class="value">03102004654</p>
                   </div>
 
                   <!--?=== COL 2 ===-->
-                  <div class="col studentName w-100 h-100">
+                  <div class="col campus w-100 h-100">
                     <p class="label">campus</p>
                     <p class="value">bahadur abad</p>
                   </div>
@@ -274,108 +286,336 @@
               </div>
             </div>
           </div>
-          <!-- <div class="studentDetails d-flex ">
-            <div
-              class="serialNumber studentDetails-item h-100 d-flex dir-col al-start jc-center"
-            >
-              <span
-                class="studentDetails-heading txt-center white poppins w-100"
-                >S.No</span
-              >
-              <span class="w-100 txt-center sNumber">1</span>
-              <span class="w-100 txt-center sNumber">2</span>
-            </div>
-
-            <div
-              class="rollNumber studentDetails-item h-100 d-flex dir-col al-start jc-center"
-            >
-              <span
-                class="studentDetails-heading txt-center white poppins w-100"
-                >Roll. No</span
-              >
-              <span class="w-100 txt-center rNumber">12345</span>
-              <span class="w-100 txt-center rNumber">22345</span>
-            </div>
-
-            <div
-              class="studentsName studentDetails-item h-100 d-flex dir-col al-start jc-center"
-            >
-              <span
-                class="studentDetails-heading txt-center white poppins w-100"
-                >Name</span
-              >
-              <span class="w-100 txt-center name">muhammd sanaullah</span>
-              <span class="w-100 txt-center name">jamal</span>
-            </div>
-
-            <div
-              class="fatherName studentDetails-item h-100 d-flex dir-col al-start jc-center"
-            >
-              <span
-                class="studentDetails-heading txt-center white poppins w-100"
-                >Father</span
-              >
-              <span class="w-100 txt-center fName">Haji sheral solangi sahb</span>
-              <span class="w-100 txt-center fName">niyaz chacha</span>
-            </div>
-
-            <div
-              class="courses studentDetails-item h-100 d-flex dir-col al-start jc-center"
-            >
-              <span
-                class="studentDetails-heading txt-center white poppins w-100"
-                >course</span
-              >
-              <span class="w-100 txt-center course">web & app development</span>
-              <span class="w-100 txt-center course">web & app development</span>
-            </div>
-
-            <div
-              class="batches studentDetails-item h-100 d-flex dir-col al-start jc-center"
-            >
-              <span
-                class="studentDetails-heading txt-center white poppins w-100"
-                >batch</span
-              >
-              <span class="w-100 txt-center batch">batch 11</span>
-              <span class="w-100 txt-center batch">batch 11</span>
-            </div>
-
-            <div
-              class="timeTable studentDetails-item h-100 d-flex dir-col al-start jc-center"
-            >
-              <span
-                class="studentDetails-heading txt-center white poppins w-100"
-                >time</span
-              >
-              <span class="w-100 txt-center time">90 to 11</span>
-              <span class="w-100 txt-center time">11 to 01</span>
-            </div>
-
-            <div
-              class="feesStatus studentDetails-item h-100 d-flex dir-col al-start jc-center"
-            >
-              <span
-                class="studentDetails-heading txt-center white poppins w-100"
-                >fees</span
-              >
-              <span class="w-100 txt-center fees">paid</span>
-              <span class="w-100 txt-center fees">unpaid</span>
-            </div>
-
-            <div
-              class="elimBtns studentDetails-item h-100 d-flex dir-col al-start jc-center"
-            >
-              <span
-                class="studentDetails-heading txt-center white poppins w-100"
-                >elim</span
-              >
-              <span class="w-100 txt-center fees">yes (elim)</span>
-              <span class="w-100 txt-center fees">no active</span>
-            </div>
-          </div> -->
         </div>
       </div>
+      <!--!=============== MODAL TO EDIT DETAILS ===============-->
+      <dialog
+        class="modalContainer d-flex jc-center al-center transition-3ms jc-center w-100 h-100 d-none"
+      >
+        <!--?=== CANCEL BTN ===-->
+        <i
+          class="fa-solid fa-xmark p-absolute pointer d-flex jc-center al-center"
+          onclick="hideModalAndShowUls()"
+        ></i>
+        <!--?=== MODAL CONTENT ===-->
+        <div
+          class="modalContent transition-3ms p-relative animate__animated animate__bounceIn"
+        >
+          <!--?=== MODAL HEADING ===-->
+          <!--!=== CATEGORY HEADINGS CONTAINER ===-->
+          <div class="categoryHeadingsContainer d-flex w-100">
+            <!--todo=== PERSONAL DETAILS ===-->
+            <h2
+              onclick="setActiveHeading(event)"
+              class="personalDetailsHeading categoryHeading modalCategoryHeading txt-center active transition-1ms pointer d-flex jc-center al-center"
+            >
+              personal details
+            </h2>
+            <!--todo=== EDUCATIONS DETAILS ===-->
+            <h2
+              onclick="setActiveHeading(event)"
+              class="educationalDetailsHeading categoryHeading modalCategoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
+            >
+              educational details
+            </h2>
+            <!--todo=== CONTACT DETAILS ===-->
+            <h2
+              onclick="setActiveHeading(event)"
+              class="contactDetailsHeading categoryHeading modalCategoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
+            >
+              contact details
+            </h2>
+          </div>
+
+          <!--?=== CONTENT BODY ===-->
+          <div class="modalContentBody p-relative">
+            <div
+              class="modalContentCover d-flex transition-3ms p-absolute w-100"
+            >
+              <!--todo======= EDIT PERSONAL DETAILS =======-->
+              <div class="editPersonalDetails modalToChange">
+                <!--*======= ROW 1 =======-->
+                <div class="row grid grid-two-cols">
+                  <!--=== COL 1 ===-->
+                  <div class="col1">
+                    <label class="modalNameLabel" for="modalName"
+                      >change name</label
+                    >
+                    <input
+                      value=""
+                      type="text"
+                      id="modalName"
+                      placeholder="change student name"
+                    />
+                  </div>
+
+                  <!--=== COL 2 ===-->
+                  <div class="col2">
+                    <label for="modalFatherName">father name</label>
+                    <input
+                      value=""
+                      type="text"
+                      id="modalFatherName"
+                      placeholder="change fatehr name"
+                    />
+                  </div>
+                </div>
+
+                <!--*======= ROW 2 =======-->
+                <div class="row grid grid-two-cols">
+                  <!--=== COL 1 ===-->
+                  <div class="col1">
+                    <label for="modalGender">change gender</label>
+                    <input
+                      value=""
+                      type="text"
+                      name="modalGender"
+                      id="modalGender"
+                      placeholder="change gender"
+                    />
+                  </div>
+
+                  <!--=== COL 2 ===-->
+                  <div class="col2">
+                    <label for="modalDateOfBirth">set priority level</label>
+                    <input
+                      type="date"
+                      class="pointer"
+                      name="modalDateOfBirth"
+                      id="modalDateOfBirth"
+                    />
+                  </div>
+                </div>
+
+                <!--*======= ROW 3 =======-->
+                <div class="row grid grid-two-cols">
+                  <!--=== COL 1 ===-->
+                  <div class="col1">
+                    <label for="modalRollNumber">change RollNumber</label>
+                    <input
+                      value=""
+                      type="number"
+                      name="modalRollNumber"
+                      id="modalRollNumber"
+                      placeholder="change rollNumber"
+                    />
+                  </div>
+
+                  <!--=== COL 2 ===-->
+                  <div class="col2">
+                    <label for="modalSeialNum">change Serial No.</label>
+                    <input
+                      placeholder="change serial number"
+                      type="number"
+                      class="pointer"
+                      name="modalSeialNum"
+                      id="modalSeialNum"
+                    />
+                  </div>
+                </div>
+                <!--*======= ADD BTN =======-->
+                <button
+                  onclick="saveDataToLocalStorageFromModal()"
+                  class="addTodos addTodosBtn btn w-100 d-flex jc-center al-center pointer"
+                >
+                  <i
+                    class="fa-solid fa-pen-to-square editBtn white pointer"
+                  ></i>
+                  <span>Save Changes</span>
+                </button>
+              </div>
+
+              <!--todo======= EDIT EDUCATIONAL DETAILS =======-->
+              <div class="editEducationalDetails modalToChange">
+                <!--*======= ROW 1 =======-->
+                <div class="row grid grid-two-cols">
+                  <!--=== COL 1 ===-->
+                  <div class="col1">
+                    <label
+                      class="modalAcadamicQualification"
+                      for="modalAcadamicQualification"
+                      >acadamic qualification</label
+                    >
+                    <input
+                      value=""
+                      type="text"
+                      id="modalAcadamicQualification"
+                      placeholder="change qualification"
+                    />
+                  </div>
+
+                  <!--=== COL 2 ===-->
+                  <div class="col2">
+                    <label for="modalHigherEducation">Higher Education</label>
+                    <input
+                      value=""
+                      type="text"
+                      id="modalHigherEducation"
+                      placeholder="change higher education"
+                    />
+                  </div>
+                </div>
+
+                <!--*======= ROW 2 =======-->
+                <div class="row grid grid-two-cols">
+                  <!--=== COL 1 ===-->
+                  <div class="col1">
+                    <label for="modalCourse">Course</label>
+                    <input
+                      value=""
+                      type="text"
+                      name="modalCourse"
+                      id="modalCourse"
+                      placeholder="change Course"
+                    />
+                  </div>
+
+                  <!--=== COL 2 ===-->
+                  <div class="col2">
+                    <label for="modalAdmissionDate">admission date</label>
+                    <input
+                      type="date"
+                      class="pointer"
+                      name="modalAdmissionDate"
+                      id="modalAdmissionDate"
+                    />
+                  </div>
+                </div>
+
+                <!--*======= ROW 3 =======-->
+                <div class="row grid grid-two-cols">
+                  <!--=== COL 1 ===-->
+                  <div class="col1">
+                    <label for="modalshift"> shift</label>
+                    <input
+                      value=""
+                      type="number"
+                      name="modalshift"
+                      id="modalshift"
+                      placeholder="change shift"
+                    />
+                  </div>
+
+                  <!--=== COL 2 ===-->
+                  <div class="col2">
+                    <label for="modalTiming">change timing</label>
+                    <input
+                      placeholder="timing"
+                      type="text"
+                      name="modalTiming"
+                      id="modalTiming"
+                    />
+                  </div>
+                </div>
+                <!--*======= ADD BTN =======-->
+                <button
+                  onclick="saveDataToLocalStorageFromModal()"
+                  class="addTodos addTodosBtn btn w-100 d-flex jc-center al-center pointer"
+                >
+                  <i
+                    class="fa-solid fa-pen-to-square editBtn white pointer"
+                  ></i>
+                  <span>Save Changes</span>
+                </button>
+              </div>
+
+              <!--todo======= EDIT CONTACT DETAILS =======-->
+              <div class="editContactDetails modalToChange">
+                <!--*======= ROW 1 =======-->
+                <div class="row grid grid-two-cols">
+                  <!--=== COL 1 ===-->
+                  <div class="col1">
+                    <label class="modalEmail" for="modalEmail"
+                      >Email Address</label
+                    >
+                    <input
+                      value=""
+                      type="text"
+                      id="modalEmail"
+                      placeholder="change email Address"
+                    />
+                  </div>
+
+                  <!--=== COL 2 ===-->
+                  <div class="col2">
+                    <label for="modalMobileNumber">Mobile Number</label>
+                    <input
+                      value=""
+                      type="text"
+                      id="modalMobileNumber"
+                      placeholder="change Number"
+                    />
+                  </div>
+                </div>
+
+                <!--*======= ROW 2 =======-->
+                <div class="row grid grid-two-cols">
+                  <!--=== COL 1 ===-->
+                  <div class="col1">
+                    <label for="modalemergencyNumber">emergencyNumber</label>
+                    <input
+                      value=""
+                      type="text"
+                      name="modalemergencyNumber"
+                      id="modalemergencyNumber"
+                      placeholder="change emergency Number"
+                    />
+                  </div>
+
+                  <!--=== COL 2 ===-->
+                  <div class="col2">
+                    <label for="modalCampus">change campus</label>
+                    <input
+                      type="text"
+                      class="pointer"
+                      name="modalCampus"
+                      id="modalCampus"
+                      placeholder="change campus"
+                    />
+                  </div>
+                </div>
+
+                <!--*======= ROW 3 =======-->
+                <div class="row grid grid-two-cols">
+                  <!--=== COL 1 ===-->
+                  <div class="col1">
+                    <label for="modalCity"> City</label>
+                    <input
+                      value=""
+                      type="text"
+                      name="modalCity"
+                      id="modalCity"
+                      placeholder="change City"
+                    />
+                  </div>
+
+                  <!--=== COL 2 ===-->
+                  <div class="col2">
+                    <label for="modalAddress">change Address</label>
+                    <input
+                      placeholder="change Address"
+                      type="text"
+                      class="pointer"
+                      name="modalAddress"
+                      id="modalAddress"
+                    />
+                  </div>
+                </div>
+                <!--*======= ADD BTN =======-->
+                <button
+                  onclick="saveDataToLocalStorageFromModal()"
+                  class="addTodos addTodosBtn btn w-100 d-flex jc-center al-center pointer"
+                >
+                  <i
+                    class="fa-solid fa-pen-to-square editBtn white pointer"
+                  ></i>
+                  <span>Save Changes</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dialog>
     </div>
     <!--!========== DROP UP SECTION ==========-->
     <div class="drop-up d-flex al-center jc-center p-fixed">

@@ -3,6 +3,11 @@
   .studentDetails {
     width: 100%;
   }
+
+  .modalContent {
+    width: 80%;
+    height: fit-content;
+  }
 }
 
 @media (width <=1000px) {
@@ -65,6 +70,10 @@
     width: fit-content%;
     font-size: 1.6rem;
   }
+
+  .modalContentBody {
+    height: 700px;
+  }
 }
 
 @media (width <=740px) {
@@ -86,6 +95,56 @@
 }
 
 @media (width <=615px) {
+  label,
+  .addTodos {
+    display: inline-block;
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  .addTodos {
+    padding: 0.5rem;
+  }
+
+  .modalContent > i {
+    font-size: 2rem;
+    right: 1%;
+    top: 1%;
+  }
+
+  .modalContent > .modalContentBody :is(input, textarea, select) {
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+
+  .modalContent,
+  .modalHeading {
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+  }
+
+  .modalContent {
+    padding: 2rem;
+  }
+
+  .modalContentBody {
+    padding: 0 1rem;
+    height: 560px;
+  }
+
+  .modalHeading {
+    font-size: 2rem;
+    padding: 1rem 0%;
+  }
+
+  .row {
+    gap: 0;
+  }
+
   label,
   .addTodos {
     display: inline-block;
@@ -152,6 +211,15 @@
   .signUpContainer,
   .logInContainer {
     width: 95%;
+  }
+
+  .modalContent {
+    height: fit-content;
+    padding-bottom: 1rem;
+  }
+
+  .grid-two-cols {
+    grid-template-columns: 1fr;
   }
 
   /*!=============== SWEAT ALERT STYLING ===============*/

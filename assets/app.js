@@ -18,6 +18,14 @@ let contactDetails = document.querySelector(".contactDetails");
 let categoryDetailsContainer = document.querySelector(
   ".categoryDetailsContainer"
 );
+//?=== MODALS EDIT SECTION ELEMENT ===
+let modalToChange = document.querySelectorAll(".modalToChange");
+let modalContent = document.querySelector(".modalContent");
+let modalContentCover = document.querySelector(".modalContentCover");
+let editPersonalDetails = document.querySelector(".editPersonalDetails");
+let editEducationalDetails = document.querySelector(".editEducationalDetails");
+let editContactDetails = document.querySelector(".editContactDetails");
+//?=== OTHERS ===
 let formDataCompleted = true; // FLAG TO CHECK EMPTY INPUT
 
 //! FUNCTION TO TOGGLE THE VISIBILITY OF THE SIDEBAR
@@ -133,34 +141,91 @@ function logIn() {
 
 //! FUNCTION TO TOGGLE THE DETAILS CATEGORY BASED ON THE CLICKED TAB.
 counter = 0;
-function toggleStudentDetails(event) {
-  categoryHeading.forEach((heading) => {
-    heading.classList.remove("active");
-  });
-
-  event.target.classList.add("active");
-
+function toggleStudentDetails(heading) {
   categoryDetails.forEach((details) => {
     details.classList.add("opacity0");
   });
 
-  if (event.target.classList.contains("personalDetailsHeading")) {
+  if (heading.classList.contains("personalDetailsHeading")) {
     counter = 0;
     categoryDetailsContainer.style.transform = `translateX( ${
       counter * -100
     }%)`;
     personalDetails.classList.remove("opacity0");
-  } else if (event.target.classList.contains("educationalDetailsHeading")) {
+  } else if (heading.classList.contains("educationalDetailsHeading")) {
     counter = 1;
     categoryDetailsContainer.style.transform = `translateX( ${
       counter * -100
     }%)`;
     educationalDetails.classList.remove("opacity0");
-  } else if (event.target.classList.contains("contactDetailsHeading")) {
+  } else if (heading.classList.contains("contactDetailsHeading")) {
     counter = 2;
     categoryDetailsContainer.style.transform = `translateX( ${
       counter * -100
     }%)`;
     contactDetails.classList.remove("opacity0");
   }
+}
+
+//! FUNCTION TO TOGGLE THE VISIBILITY OF EDIT SECTIONS WITHIN THE MODAL
+function toggleEditSection(heading) {
+  modalToChange.forEach((modal) => {
+    modal.classList.add("opacity0");
+  });
+
+  if (heading.classList.contains("personalDetailsHeading")) {
+    counter = 0;
+    modalContentCover.style.transform = `translateX( ${counter * -100}%)`;
+    editPersonalDetails.classList.remove("opacity0");
+  } else if (heading.classList.contains("educationalDetailsHeading")) {
+    counter = 1;
+    modalContentCover.style.transform = `translateX( ${counter * -100}%)`;
+    editEducationalDetails.classList.remove("opacity0");
+  } else if (heading.classList.contains("contactDetailsHeading")) {
+    counter = 2;
+    modalContentCover.style.transform = `translateX( ${counter * -100}%)`;
+    editContactDetails.classList.remove("opacity0");
+  }
+}
+
+//! FUNCTION TO SET THE ACTIVE CLASS ON THE HEADING OF THE SECTIN THAT IS CURRENCTLY BEING VIEWED
+function setActiveHeading(event) {
+  categoryHeading.forEach((heading) => {
+    heading.classList.remove("active");
+  });
+
+  let heading = event.target;
+
+  if (!event.target.classList.contains("categoryHeading")) {
+    heading = event.target.closest("h2");
+  }
+
+  heading.classList.add("active");
+  if (heading.classList.contains("detailsCategoryHeading")) {
+    toggleStudentDetails(heading);
+  } else {
+    toggleEditSection(heading);
+  }
+}
+
+//! ==============================================
+//! MODAL FUNCTIONALITY
+//! ==============================================
+
+//* FUNCTION TO SHOW THE MODAL AND HIDE THE UL ELEMENTS
+function showModalAndHideUls() {
+  let modalContainer = document.querySelector(".modalContainer");
+
+  //? HIDING ALL LISTS AND SHOWING MODAL
+  modalContainer.classList.replace("d-none", "d-flex");
+  modalContent.classList.replace("animate__bounceOut", "animate__bounceIn");
+}
+
+//* FUNCTION TO HIDE THE MODAL AND SHOW THE UL ELEMENTS
+function hideModalAndShowUls() {
+  let modalContainer = document.querySelector(".modalContainer");
+  modalContent.classList.replace("animate__bounceIn", "animate__bounceOut");
+  setTimeout(() => {
+    modalContainer.classList.replace("d-flex", "d-none");
+  }, 700);
 }

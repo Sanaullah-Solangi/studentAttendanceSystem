@@ -463,11 +463,16 @@ header > a > img {
 }
 
 /*!=============== SIDEBAR STYLING ===============*/
+.sideBar-container,
+.studentDetails,
+.modalContentBody {
+  overflow: hidden;
+}
+
 .sideBar-container {
   background-color: var(--mainColor3);
   width: 55px;
   font-size: 1.7rem;
-  overflow: hidden;
   z-index: 1;
 }
 
@@ -529,19 +534,30 @@ header > a > img {
   gap: 1rem;
   flex-wrap: wrap;
 }
-
-.dashBoard-item {
-  flex: 1 1 23%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  padding: 1rem 2rem;
-  color: white;
-  background-color: var(--mainColor3);
+.dashBoard-item,
+.studentDetails,
+.value,
+.studentDetails-mainHeading > i,
+.modalContent,
+.modalHeading,
+.modalContainer > i {
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
 }
+.dashBoard-item {
+  flex: 1 1 23%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  background-color: var(--mainColor3);
+}
+.dashBoard-item,
+.modalContent {
+  padding: 1rem 2rem;
+}
+
 .dashBoard-item > .itemHeader {
   gap: 1rem;
 }
@@ -566,24 +582,22 @@ header > a > img {
 .studentDetails {
   width: 90%;
 }
+
+/*?=== MAIN HEADING ===*/
+.studentDetails-mainHeading > i {
+  background-color: var(--mainColor3);
+  padding: 1rem;
+}
 /*?=== SARI DETAILS KA PARENT DIV ===*/
 .studentDetails {
   background-color: white;
   padding: 3rem;
   margin-top: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
   height: 400px;
 }
 
-.studentDetails,
-.value {
-  border-radius: 1rem;
-  -webkit-border-radius: 1rem;
-  -moz-border-radius: 1rem;
-  -ms-border-radius: 1rem;
-  -o-border-radius: 1rem;
-}
+/*!=============== CATEGORY HEADING SECTION ===============*/
 
 /*?=== SARI NAVIGATION HEADINGS KA PARENT DIV ===*/
 .categoryHeadingsContainer {
@@ -601,6 +615,10 @@ header > a > img {
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
+.modalContent > .categoryHeadingsContainer > .categoryHeading {
+  font-size: 1.5rem;
+}
+
 .categoryHeading:hover,
 .active {
   background-color: var(--mainColor3);
@@ -614,10 +632,11 @@ header > a > img {
 /*?=== DETAILS KA PARENT DIV ===*/
 .categoryDetailsContainer {
   left: 10%;
-  top: 20%;
+  top: 25%;
 }
 
-.categoryDetails {
+.categoryDetails,
+.modalToChange {
   min-width: 100%;
 }
 
@@ -633,13 +652,14 @@ header > a > img {
   font-size: 1.5rem;
   color: #716f6f;
   margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .value {
-  border: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 2rem;
   width: 70%;
   padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--mainColor2);
 }
 /*!=============== END ===============*/
 .studentDetails-item {
@@ -679,6 +699,92 @@ header > a > img {
 .fatherName,
 .courses {
   flex: 1 1 35%;
+}
+
+/*!=============== MODAL STYLING ===============*/
+
+.modalContainer {
+  background-color: rgb(231, 230, 233);
+  border: none;
+  top: 0;
+  left: 0;
+}
+
+.modalContent {
+  height: fit-content;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modalContentBody {
+  height: 390px;
+}
+
+.modalContentCover {
+  left: 0;
+  bottom: 0;
+}
+
+.modalContent
+  > .modalContentBody
+  :is(input, textarea, select, .dialoge, .addTodos) {
+  width: 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.modalHeading {
+  font-size: 3rem;
+  color: #fff;
+  padding: 1rem 0%;
+  font-weight: 500;
+  background-color: var(--mainColor1);
+}
+
+.modalContent > .modalContentBody :is(input, textarea, select) {
+  width: 100%;
+  font-size: 1.8rem;
+  padding: 1rem;
+  resize: none;
+  color: #000;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+.modalContent > .modalContentBody :is(input, textarea, select),
+.addTodos {
+  border: 2px solid var(--mainColor1);
+}
+
+.modalContent > .modalContentBody :is(input, textarea, select):focus {
+  border: 3px solid var(--mainColor1);
+}
+
+label,
+.addTodos {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.addTodos {
+  background-color: var(--mainColor1);
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.modalContainer > i {
+  font-size: 3rem;
+  right: 2%;
+  top: 5%;
+  width: 4.5rem;
+  height: 4.5rem;
+  color: white;
+  background-color: var(--red-hover);
 }
 
 /*!=============== SWEAT ALERT STYLING ===============*/
