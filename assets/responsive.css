@@ -133,7 +133,7 @@
 
   .modalContentBody {
     padding: 0 1rem;
-    height: 560px;
+    height: 540px;
   }
 
   .modalHeading {
@@ -157,10 +157,12 @@
     padding: 0.5rem;
   }
 
-  .modalContent > i {
-    font-size: 2rem;
-    right: 1%;
+  .modalContainer > i {
+    font-size: 1.5rem;
     top: 1%;
+    right: 5%;
+    width: 3rem;
+    height: 3rem;
   }
 }
 

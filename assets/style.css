@@ -20,7 +20,6 @@
   list-style: none;
   scroll-behavior: smooth;
   font-family: "jost";
-  text-transform: capitalize;
 }
 .black {
   color: black;
@@ -785,6 +784,7 @@ label,
   height: 4.5rem;
   color: white;
   background-color: var(--red-hover);
+  z-index: 2;
 }
 
 /*!=============== SWEAT ALERT STYLING ===============*/

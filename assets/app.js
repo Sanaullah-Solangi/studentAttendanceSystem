@@ -1,5 +1,8 @@
 //?=== MAIN CONTAINER ===
 let mainContainer = document.querySelector(".main-container");
+let studentDetailsContainer = document.querySelector(
+  ".studentsDetails-container"
+);
 //?=== SIDE BAR ELEMENTS ===
 let sideBar = document.querySelector(".sideBar-container");
 let sideBarHeader = document.querySelector(".sideBar-header > a");
@@ -219,6 +222,7 @@ function showModalAndHideUls() {
   //? HIDING ALL LISTS AND SHOWING MODAL
   modalContainer.classList.replace("d-none", "d-flex");
   modalContent.classList.replace("animate__bounceOut", "animate__bounceIn");
+  studentDetailsContainer.classList.add("d-none");
 }
 
 //* FUNCTION TO HIDE THE MODAL AND SHOW THE UL ELEMENTS
@@ -227,5 +231,6 @@ function hideModalAndShowUls() {
   modalContent.classList.replace("animate__bounceIn", "animate__bounceOut");
   setTimeout(() => {
     modalContainer.classList.replace("d-flex", "d-none");
+    studentDetailsContainer.classList.remove("d-none");
   }, 700);
 }
