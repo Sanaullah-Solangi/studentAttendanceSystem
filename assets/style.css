@@ -573,6 +573,7 @@ header > a > img {
   margin-top: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  height: 400px;
 }
 
 .studentDetails,
@@ -612,7 +613,8 @@ header > a > img {
 
 /*?=== DETAILS KA PARENT DIV ===*/
 .categoryDetailsContainer {
-  margin-top: 2rem;
+  left: 10%;
+  top: 20%;
 }
 
 .categoryDetails {

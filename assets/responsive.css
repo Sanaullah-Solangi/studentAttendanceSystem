@@ -21,7 +21,7 @@
   }
 
   .studentDetails {
-    padding: 3rem 1rem;
+    padding:  1rem;
   }
 }
 
@@ -46,8 +46,19 @@
     padding-left: 0px;
   }
 
+  .studentDetails{
+    height: 90vh;
+  }
+  .categoryDetailsContainer {
+    left: 5%;
+    top: 18%;
+  }
+
   .row {
     grid-template-columns: 1fr;
+  }
+  .value {
+    width: 100%;
   }
 }
 
@@ -70,10 +81,6 @@
 }
 
 @media (width <=615px) {
-  .row {
-    gap: 0;
-  }
-
   label,
   .addTodos {
     display: inline-block;
@@ -93,9 +100,26 @@
   }
 }
 
-@media (width <=590px){
-  .categoryHeading  {
+@media (width <=600px) {
+  /*?=== SARI NAVIGATION HEADINGS KA PARENT DIV ===*/
+  .categoryHeadingsContainer {
+    gap: 0rem;
+    flex-wrap: wrap;
+  }
+
+  /*?=== SARI NAVIGATION WALI HEDINGS ===*/
+  .categoryHeading {
+    flex: 1 1 40%;
+    gap: 0rem;
+    border-top-left-radius: 0rem;
     font-size: 1.3rem;
+    border-top-right-radius: 0rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
   }
 }
 
