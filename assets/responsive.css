@@ -62,7 +62,7 @@
     font-size: 1.4rem;
   }
   .value {
-    width: 100%;
+    width: fit-content%;
     font-size: 1.6rem;
   }
 }
