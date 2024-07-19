@@ -8,7 +8,6 @@
   font-family: "poppins";
   src: url(./Poppins-Regular.ttf);
 }
-
 .poppins {
   font-family: "poppins", sans-serif;
 }
@@ -43,8 +42,15 @@ html {
 .main-container {
   margin-top: 7rem;
   flex-wrap: wrap;
+  height: 100%;
 }
 
+.vh {
+  height: 100vh;
+}
+.per {
+  height: 100%;
+}
 .section {
   padding: 2rem;
 }
@@ -184,6 +190,9 @@ h6,
   content: "";
   position: absolute;
 }
+.p-fixed {
+  position: fixed;
+}
 
 /*todo===== all other properties =====*/
 
@@ -276,6 +285,9 @@ h6,
   }
 }
 /*!=============== HEADAER SECTION ===============*/
+body {
+  background-color: #f7f7f7;
+}
 
 header {
   background-color: #f8f6f6;
@@ -320,10 +332,10 @@ header > a > img {
 }
 .header > .logOutBtns > a {
   border-radius: 0px;
-  -webkit-border-radius: ;
-  -moz-border-radius: ;
-  -ms-border-radius: ;
-  -o-border-radius: ;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
 }
 .header > .logInBtns {
   margin-block: 1rem;
@@ -367,19 +379,13 @@ header > a > img {
 }
 
 /*!=============== MAINCONTAINER SECTION STARTS ===============*/
-.vh {
-  height: 100vh;
-}
-.per {
-  height: 100%;
-}
 
 .logInContainer {
   border-radius: 5px;
-  -webkit-border-radius: ;
-  -moz-border-radius: ;
-  -ms-border-radius: ;
-  -o-border-radius: ;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .logInContainer {
@@ -440,10 +446,10 @@ header > a > img {
   width: 65px;
   background-color: var(--hover);
   transform: translateY(-50%);
-  -webkit-transform:;
-  -moz-transform:;
-  -ms-transform:;
-  -o-transform:;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
 }
 
 .hero-container {
@@ -514,7 +520,7 @@ header > a > img {
   flex: 1 1 75%;
 }
 
-.dashBoard-header > .angle {
+.hero-header > .angle {
   left: 0;
 }
 
@@ -556,28 +562,115 @@ header > a > img {
 
 /*!=============== STUDENTS DATA SECTION ===============*/
 
-.studentsData-item {
-  flex: 1 1 10%;
-  border: 1px solid red;
-  font-size: 1.8rem;
+.studentDetails-mainHeading,
+.studentDetails {
+  width: 90%;
 }
-.studentsData-item > span {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-}
-:not(.studentsData-item:first-child) {
-  border-left: none;
+/*?=== SARI DETAILS KA PARENT DIV ===*/
+.studentDetails {
+  background-color: white;
+  padding: 3rem;
+  margin-top: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
-.serialNumber,
+.studentDetails,
+.value {
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+/*?=== SARI NAVIGATION HEADINGS KA PARENT DIV ===*/
+.categoryHeadingsContainer {
+  gap: 0.5rem;
+}
+
+/*?=== SARI NAVIGATION WALI HEDINGS ===*/
+.categoryHeading {
+  flex: 1 1 33%;
+  gap: 2rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  padding: 1rem;
+  font-size: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.categoryHeading:hover,
+.active {
+  background-color: var(--mainColor3);
+  color: white;
+}
+
+.categoryHeading > i {
+  font-size: 3rem;
+}
+
+/*?=== DETAILS KA PARENT DIV ===*/
+.categoryDetailsContainer {
+  margin-top: 2rem;
+}
+
+.categoryDetails {
+  min-width: 100%;
+}
+
+.row {
+  gap: 1rem;
+}
+
+.row .col {
+  padding: 0.5rem 0;
+}
+
+.label {
+  font-size: 1.5rem;
+  color: #716f6f;
+  margin-bottom: 0.5rem;
+}
+
+.value {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
+  width: 70%;
+  padding: 0.5rem 1rem;
+}
+/*!=============== END ===============*/
+.studentDetails-item {
+  flex: 1 1 10%;
+  font-size: 1.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.studentDetails-heading {
+  background-color: var(--mainColor3);
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+.studentDetails-item > span {
+  padding: 1rem 0rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.serialNumber {
+  flex: 1 1 10%;
+}
 .rollNumber {
-  flex: 1 1 14%;
+  flex: 1 1 20%;
 }
 
 .batches,
 .timeTable,
-.feesStatus,
-.eleminateBtns {
-  flex: 1 1 7%;
+.feesStatus {
+  flex: 1 1 13%;
+}
+
+.elimBtns {
+  flex: 1 1 17%;
 }
 
 .studentsName,

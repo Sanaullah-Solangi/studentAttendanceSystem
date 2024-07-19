@@ -1,10 +1,16 @@
+@media (width <=1080px) {
+  .studentDetails-mainHeading,
+  .studentDetails {
+    width: 100%;
+  }
+}
+
 @media (width <=1000px) {
   .show > .sideBar-container {
     width: 450px;
   }
 
-  .hero-header > .angle,
-  .sideBar-header > i {
+  .hero-header > .angle {
     display: flex;
   }
 }
@@ -13,8 +19,20 @@
   .dashBoard-item {
     flex: 1 1 30%;
   }
+
+  .studentDetails {
+    padding: 3rem 1rem;
+  }
 }
 
+@media (width <=940px) {
+  .categoryHeading {
+    gap: 1rem;
+    padding: 1rem 0;
+    font-size: 1.7rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+}
 @media (width <=800px) {
   .sideBar-container {
     width: 0%;
@@ -27,11 +45,27 @@
   .hero-container {
     padding-left: 0px;
   }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (width <=740px) {
   .dashBoard-item {
     flex: 1 1 40%;
+  }
+
+  .categoryHeading,
+  .categoryHeading > i {
+    font-size: 1.6rem;
+  }
+}
+
+@media (width <=640px) {
+  .categoryHeading > i {
+    font-size: 1.6rem;
+    display: none;
   }
 }
 
@@ -56,6 +90,12 @@
     font-size: 2rem;
     right: 1%;
     top: 1%;
+  }
+}
+
+@media (width <=590px){
+  .categoryHeading  {
+    font-size: 1.3rem;
   }
 }
 

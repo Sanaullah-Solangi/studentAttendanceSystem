@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--!== facicon link ===-->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.png"
+      type="image/x-icon"
+    />
+    <!--!== font awesome cdn ===-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      ,
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--!== animate css cdn ===-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!--!== style sheets ===-->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/responsive.css" />
+    <title>Student Data Overview</title>
+  </head>
+  <body>
+    <div class="main-container m-auto d-flex vh p-relative">
+      <!--!=============== SIDEBAR CONTAINER ===============-->
+      <div
+        class="sideBar-container p-absolute h-100 transition-3ms"
+        onmouseover="showSideBar()"
+        onmouseleave="hideSideBar()"
+      >
+        <!--todo======= SIDEBAR HEADER =======-->
+        <div class="sideBar-header transition-3ms d-flex al-center p-relative">
+          <img src="./assets/images/logo.png" alt="" />
+          <a class="white" href="#">Sani Attendance System</a>
+          <i
+            onclick="hideSideBar()"
+            class="fa-solid fa-angle-left angle p-absolute white d-flex al-center jc-center pointer d-none"
+          ></i>
+        </div>
+
+        <!--todo======= SIDEBAR NAVIGATIONS =======-->
+        <ul class="sideBar-nav d-flex al-start jc-center dir-col">
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-house-user"></i>
+            <a class="white w-100" href="./dashBoard.html">Dashboard</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-clipboard-user"></i>
+            <a class="white w-100" href="#attendance">Attendance</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-user-graduate"></i>
+            <a class="white w-100" href="./studentsData.html">Students</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-landmark"></i>
+            <a class="white w-100" href="#classes"> Classes</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-user-tie"></i>
+            <a class="white w-100" href="#users"> Users</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            <a class="white w-100" href="#users">shifts</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <a class="white w-100" href="javascript:void(0)">log&nbsp;out</a>
+          </li>
+        </ul>
+
+        <!--todo======= SIDEBAR COPYRIGHT =======-->
+        <p class="copyWrite transition-3ms white d-none">
+          © 2024 Sanaullah. All rights reserved.
+        </p>
+      </div>
+      <!--!=============== studentsData CONTAINER ===============-->
+      <div class="studentsData-container hero-container">
+        <!--todo======= studentsData HEADER =======-->
+        <div
+          class="studentsData-header hero-header d-flex al-center jc-end peddingRight p-relative"
+        >
+          <a href="#" class="black bold">admin</a>
+          <i class="fa-solid fa-user"></i>
+
+          <i
+            class="fa-solid fa-angle-right angle white al-center jc-center h-100 p-absolute d-none"
+            onclick="showSideBar()"
+          ></i>
+        </div>
+        <!--todo======= STUDENTS DETAILS CONTENT =======-->
+        <div class="studentDetails-content section">
+          <!--?=== DASHBOARD HEADING ===-->
+          <h1>students details</h1>
+          <div class="studentDetails d-flex">
+            <!--*=== SERIAL NUMBER ===-->
+            <div
+              class="serialNumber studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >S.No</span
+              >
+              <span class="w-100 txt-center sNumber">1</span>
+              <span class="w-100 txt-center sNumber">2</span>
+            </div>
+
+            <!--*=== ROLL NUMBER ===-->
+            <div
+              class="rollNumber studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >Roll. No</span
+              >
+              <span class="w-100 txt-center rNumber">12345</span>
+              <span class="w-100 txt-center rNumber">22345</span>
+            </div>
+
+            <!--*=== STUDENT NAME ===-->
+            <div
+              class="studentsName studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >Name</span
+              >
+              <span class="w-100 txt-center name">muhammd sanaullah</span>
+              <span class="w-100 txt-center name">jamal</span>
+            </div>
+
+            <!--*=== FATHER NAME ===-->
+            <div
+              class="fatherName studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >Father</span
+              >
+              <span class="w-100 txt-center fName"
+                >Haji sheral solangi sahb</span
+              >
+              <span class="w-100 txt-center fName">niyaz chacha</span>
+            </div>
+
+            <!--*=== COURSE ===-->
+            <div
+              class="courses studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >course</span
+              >
+              <span class="w-100 txt-center course">web & app development</span>
+              <span class="w-100 txt-center course">web & app development</span>
+            </div>
+
+            <!--*=== BATCH ===-->
+            <div
+              class="batches studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >batch</span
+              >
+              <span class="w-100 txt-center batch">batch 11</span>
+              <span class="w-100 txt-center batch">batch 11</span>
+            </div>
+
+            <!--*=== TIME ===-->
+            <div
+              class="timeTable studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >time</span
+              >
+              <span class="w-100 txt-center time">90 to 11</span>
+              <span class="w-100 txt-center time">11 to 01</span>
+            </div>
+
+            <!--*=== FEES ===-->
+            <div
+              class="feesStatus studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >fees</span
+              >
+              <span class="w-100 txt-center fees">paid</span>
+              <span class="w-100 txt-center fees">unpaid</span>
+            </div>
+
+            <!--*=== ELEMINATE BUTTON ===-->
+            <div
+              class="elimBtns studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >elim</span
+              >
+              <span class="w-100 txt-center fees">yes (elim)</span>
+              <span class="w-100 txt-center fees">no active</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--!========== DROP UP SECTION ==========-->
+    <div class="drop-up d-flex al-center jc-center p-fixed">
+      <a href="#home"
+        ><i class="fa-solid fa-angle-up d-flex jc-center al-center"></i
+      ></a>
+    </div>
+    <!--!========== JAVASCRIPT SECTION ==========-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

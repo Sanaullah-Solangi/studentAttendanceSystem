@@ -1,4 +1,6 @@
+//?=== MAIN CONTAINER ===
 let mainContainer = document.querySelector(".main-container");
+//?=== SIDE BAR ELEMENTS ===
 let sideBar = document.querySelector(".sideBar-container");
 let sideBarHeader = document.querySelector(".sideBar-header > a");
 let toggleBtns = document.querySelector(".toggleBtns");
@@ -7,20 +9,29 @@ let barBtn = document.querySelector(".toggleBtns > .bar");
 let angle = document.querySelector(".angle");
 let copyWrite = document.querySelector(".copyWrite");
 let sideBarNav = document.querySelectorAll(".sideBar-nav > li");
+//?=== STUDENT DETAILS ELEMENT ===
+let categoryHeading = document.querySelectorAll(".categoryHeading");
+let categoryDetails = document.querySelectorAll(".categoryDetails");
+let personalDetails = document.querySelector(".personalDetails");
+let educationalDetails = document.querySelector(".educationalDetails");
+let contactDetails = document.querySelector(".contactDetails");
+let categoryDetailsContainer = document.querySelector(
+  ".categoryDetailsContainer"
+);
 let formDataCompleted = true; // FLAG TO CHECK EMPTY INPUT
 
 //! FUNCTION TO TOGGLE THE VISIBILITY OF THE SIDEBAR
 function showSideBar() {
   mainContainer.classList.add("show");
   copyWrite.classList.remove("d-none");
-  angle.classList.remove("opacity0");
+  angle.classList.remove("d-none");
 }
 
 function hideSideBar() {
   if (mainContainer.classList.contains("show")) {
     mainContainer.classList.remove("show");
     copyWrite.classList.add("d-none");
-    angle.classList.add("opacity0");
+    angle.classList.add("d-none");
   }
 }
 //! FUNCTION TO LOG IN
@@ -117,5 +128,39 @@ function logIn() {
       text: "Please fill in all the fields before submitting.",
     });
     formDataCompleted = true;
+  }
+}
+
+//! FUNCTION TO TOGGLE THE DETAILS CATEGORY BASED ON THE CLICKED TAB.
+counter = 0;
+function toggleStudentDetails(event) {
+  categoryHeading.forEach((heading) => {
+    heading.classList.remove("active");
+  });
+
+  event.target.classList.add("active");
+
+  categoryDetails.forEach((details) => {
+    details.classList.add("opacity0");
+  });
+
+  if (event.target.classList.contains("personalDetailsHeading")) {
+    counter = 0;
+    categoryDetailsContainer.style.transform = `translateX( ${
+      counter * -100
+    }%)`;
+    personalDetails.classList.remove("opacity0");
+  } else if (event.target.classList.contains("educationalDetailsHeading")) {
+    counter = 1;
+    categoryDetailsContainer.style.transform = `translateX( ${
+      counter * -100
+    }%)`;
+    educationalDetails.classList.remove("opacity0");
+  } else if (event.target.classList.contains("contactDetailsHeading")) {
+    counter = 2;
+    categoryDetailsContainer.style.transform = `translateX( ${
+      counter * -100
+    }%)`;
+    contactDetails.classList.remove("opacity0");
   }
 }

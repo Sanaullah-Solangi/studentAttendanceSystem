@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--!== facicon link ===-->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.png"
+      type="image/x-icon"
+    />
+    <!--!== font awesome cdn ===-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      ,
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--!== animate css cdn ===-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!--!== style sheets ===-->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/responsive.css" />
+    <title>Student Data Overview</title>
+  </head>
+  <body>
+    <div class="main-container m-auto d-flex per p-relative">
+      <!--!=============== SIDEBAR CONTAINER ===============-->
+      <div
+        class="sideBar-container p-fixed h-100 transition-3ms"
+        onmouseover="showSideBar()"
+        onmouseleave="hideSideBar()"
+      >
+        <!--todo======= SIDEBAR HEADER =======-->
+        <div class="sideBar-header transition-3ms d-flex al-center p-relative">
+          <img src="./assets/images/logo.png" alt="" />
+          <a class="white" href="#">Sani Attendance System</a>
+          <i
+            onclick="hideSideBar()"
+            class="fa-solid fa-angle-left angle p-absolute white d-flex al-center jc-center pointer d-none"
+          ></i>
+        </div>
+
+        <!--todo======= SIDEBAR NAVIGATIONS =======-->
+        <ul class="sideBar-nav d-flex al-start jc-center dir-col">
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-house-user"></i>
+            <a class="white w-100" href="./dashBoard.html">Dashboard</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-clipboard-user"></i>
+            <a class="white w-100" href="#attendance">Attendance</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-user-graduate"></i>
+            <a class="white w-100" href="./studentsData.html">Students</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-landmark"></i>
+            <a class="white w-100" href="#classes"> Classes</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-user-tie"></i>
+            <a class="white w-100" href="#users"> Users</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            <a class="white w-100" href="#users">shifts</a>
+          </li>
+          <li class="d-flex al-center w-100 white pointer transition-1ms">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <a class="white w-100" href="javascript:void(0)">log&nbsp;out</a>
+          </li>
+        </ul>
+
+        <!--todo======= SIDEBAR COPYRIGHT =======-->
+        <p class="copyWrite transition-3ms white d-none">
+          © 2024 Sanaullah. All rights reserved.
+        </p>
+      </div>
+      <!--!=============== STUDENTS DETAILS CONTAINER ===============-->
+      <div class="studentsDetails-container hero-container">
+        <!--todo======= STUDENTS DETAILS HEADER =======-->
+        <div
+          class="studentsData-header hero-header d-flex al-center jc-end peddingRight p-relative"
+        >
+          <a href="#" class="black bold">admin</a>
+          <i class="fa-solid fa-user"></i>
+
+          <i
+            class="fa-solid fa-angle-right angle white al-center jc-center h-100 p-absolute d-none"
+            onclick="showSideBar()"
+          ></i>
+        </div>
+        <!--todo======= STUDENTS DETAILS CONTENT =======-->
+        <div class="studentDetails-content section">
+          <!--?=== STUDENT DETAILS HEADING ===-->
+          <h1 class="studentDetails-mainHeading m-auto">student details</h1>
+
+          <!--?=== STUDENTS DETAILS ===-->
+          <div class="studentDetails m-auto">
+            <!--!=== CATEGORY HEADINGS CONTAINER ===-->
+            <div class="categoryHeadingsContainer d-flex w-100">
+              <!--todo=== PERSONAL DETAILS ===-->
+              <h2
+                onclick="toggleStudentDetails(event)"
+                class="personalDetailsHeading categoryHeading txt-center active transition-1ms pointer d-flex jc-center al-center"
+              >
+                <i class="fa-solid fa-person"></i> personal details
+              </h2>
+              <!--todo=== EDUCATIONS DETAILS ===-->
+              <h2
+                onclick="toggleStudentDetails(event)"
+                class="educationalDetailsHeading categoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
+              >
+                <i class="fa-solid fa-school"></i> educational details
+              </h2>
+              <!--todo=== CONTACT DETAILS ===-->
+              <h2
+                onclick="toggleStudentDetails(event)"
+                class="contactDetailsHeading categoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
+              >
+                <i class="fa-solid fa-address-book"></i> contact details
+              </h2>
+            </div>
+
+            <!--!=== CATEGORY DETAILS CONTAINER ===-->
+            <div class="categoryDetailsContainer transition-3ms d-flex">
+              <!--?=== PERSONAL DETAILS ===-->
+              <div class="personalDetails categoryDetails transition-3ms">
+                <!--todo======= ROW 1 =======-->
+                <div class="row grid grid-two-cols al-center">
+                  <!--?=== COL 1 ===-->
+                  <div class="col studentName w-100 h-100">
+                    <p class="label">name</p>
+                    <p class="value">sanaullah</p>
+                  </div>
+                  <!--?=== COL 2 ===-->
+                  <div class="col fatherName w-100 h-100">
+                    <p class="label">father name</p>
+                    <p class="value">HAJI SHER ALI</p>
+                  </div>
+                </div>
+                <!--todo======= ROW 2 =======-->
+                <div class="row grid grid-two-cols al-center">
+                  <!--?=== COL 1 ===-->
+                  <div class="col emailAddress w-100 h-100">
+                    <p class="label">gender</p>
+                    <p class="value">male</p>
+                  </div>
+
+                  <!--?=== COL 2 ===-->
+                  <div class="col studentName w-100 h-100">
+                    <p class="label">date of birth</p>
+                    <p class="value">5 jan 2000</p>
+                  </div>
+                </div>
+
+                <!--todo======= ROW 3 =======-->
+                <div class="row grid grid-two-cols al-center">
+                  <!--?=== COL 1 ===-->
+                  <div class="col emailAddress w-100 h-100">
+                    <p class="label">roll number</p>
+                    <p class="value">12344</p>
+                  </div>
+
+                  <!--?=== COL 2 ===-->
+                  <div class="col studentName w-100 h-100">
+                    <p class="label">serial number</p>
+                    <p class="value">10</p>
+                  </div>
+                </div>
+              </div>
+
+              <!--?=== EDUCAIONAL DETAILS ===-->
+              <div class="educationalDetails categoryDetails transition-3ms opacity0">
+                <!--todo======= ROW 1 =======-->
+                <div class="row grid grid-two-cols al-center">
+                  <!--?=== COL 1 ===-->
+                  <div class="col emailAddress w-100">
+                    <p class="label">acadamic qualification</p>
+                    <p class="value">metrik</p>
+                  </div>
+
+                  <!--?=== COL 2 ===-->
+                  <div class="col studentName w-100 h-100">
+                    <p class="label">higher education</p>
+                    <p class="value">intermediate</p>
+                  </div>
+                </div>
+                <!--todo======= ROW 2 =======-->
+                <div class="row grid grid-two-cols al-center">
+                  <!--?=== COL 1 ===-->
+                  <div class="col emailAddress w-100 h-100">
+                    <p class="label">course</p>
+                    <p class="value">web and app development</p>
+                  </div>
+
+                  <!--?=== COL 2 ===-->
+                  <div class="col studentName w-100 h-100">
+                    <p class="label">admission date</p>
+                    <p class="value">5 jan 2000</p>
+                  </div>
+                </div>
+                <!--todo======= ROW 3 =======-->
+                <div class="row grid grid-two-cols al-center">
+                  <!--?=== COL 1 ===-->
+                  <div class="col emailAddress w-100 h-100">
+                    <p class="label">shift</p>
+                    <p class="value">morning</p>
+                  </div>
+
+                  <!--?=== COL 2 ===-->
+                  <div class="col studentName w-100 h-100">
+                    <p class="label">timing</p>
+                    <p class="value">09 to 11</p>
+                  </div>
+                </div>
+              </div>
+
+              <!--?=== CONTACT DETAILS ===-->
+              <div class="contactDetails categoryDetails transition-3ms opacity0">
+                <!--todo======= ROW 1 =======-->
+                <div class="row grid grid-two-cols al-center">
+                  <!--?=== COL 1 ===-->
+                  <div class="col emailAddress w-100 h-100">
+                    <p class="label">email address</p>
+                    <p class="value">sanaullahsolangi@gmail.com</p>
+                  </div>
+
+                  <!--?=== COL 2 ===-->
+                  <div class="col studentName w-100 h-100">
+                    <p class="label">mobile number</p>
+                    <p class="value">03102004654</p>
+                  </div>
+                </div>
+
+                <!--todo======= ROW 2 =======-->
+                <div class="row grid grid-two-cols al-center">
+                  <!--?=== COL 1 ===-->
+                  <div class="col studentName w-100 h-100">
+                    <p class="label">emergency contact number</p>
+                    <p class="value">03102004654</p>
+                  </div>
+
+                  <!--?=== COL 2 ===-->
+                  <div class="col studentName w-100 h-100">
+                    <p class="label">campus</p>
+                    <p class="value">bahadur abad</p>
+                  </div>
+                </div>
+                <!--todo======= ROW 3 =======-->
+                <div class="row grid grid-two-cols al-center">
+                  <!--?=== COL 1 ===-->
+                  <div class="col emailAddress w-100 h-100">
+                    <p class="label">city</p>
+                    <p class="value">karachi</p>
+                  </div>
+                  <!--?=== COL 1 ===-->
+                  <div class="col emailAddress w-100 h-100">
+                    <p class="label">address</p>
+                    <p class="value">bukhari muhalla mowach goth karachi</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="studentDetails d-flex ">
+            <div
+              class="serialNumber studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >S.No</span
+              >
+              <span class="w-100 txt-center sNumber">1</span>
+              <span class="w-100 txt-center sNumber">2</span>
+            </div>
+
+            <div
+              class="rollNumber studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >Roll. No</span
+              >
+              <span class="w-100 txt-center rNumber">12345</span>
+              <span class="w-100 txt-center rNumber">22345</span>
+            </div>
+
+            <div
+              class="studentsName studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >Name</span
+              >
+              <span class="w-100 txt-center name">muhammd sanaullah</span>
+              <span class="w-100 txt-center name">jamal</span>
+            </div>
+
+            <div
+              class="fatherName studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >Father</span
+              >
+              <span class="w-100 txt-center fName">Haji sheral solangi sahb</span>
+              <span class="w-100 txt-center fName">niyaz chacha</span>
+            </div>
+
+            <div
+              class="courses studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >course</span
+              >
+              <span class="w-100 txt-center course">web & app development</span>
+              <span class="w-100 txt-center course">web & app development</span>
+            </div>
+
+            <div
+              class="batches studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >batch</span
+              >
+              <span class="w-100 txt-center batch">batch 11</span>
+              <span class="w-100 txt-center batch">batch 11</span>
+            </div>
+
+            <div
+              class="timeTable studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >time</span
+              >
+              <span class="w-100 txt-center time">90 to 11</span>
+              <span class="w-100 txt-center time">11 to 01</span>
+            </div>
+
+            <div
+              class="feesStatus studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >fees</span
+              >
+              <span class="w-100 txt-center fees">paid</span>
+              <span class="w-100 txt-center fees">unpaid</span>
+            </div>
+
+            <div
+              class="elimBtns studentDetails-item h-100 d-flex dir-col al-start jc-center"
+            >
+              <span
+                class="studentDetails-heading txt-center white poppins w-100"
+                >elim</span
+              >
+              <span class="w-100 txt-center fees">yes (elim)</span>
+              <span class="w-100 txt-center fees">no active</span>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <!--!========== DROP UP SECTION ==========-->
+      <div class="drop-up d-flex al-center jc-center p-absolute">
+        <a href="#home"
+          ><i class="fa-solid fa-angle-up d-flex jc-center al-center"></i
+        ></a>
+      </div>
+    </div>
+
+    <!--!========== JAVASCRIPT SECTION ==========-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
