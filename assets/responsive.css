@@ -21,7 +21,7 @@
   }
 
   .studentDetails {
-    padding:  1rem;
+    padding: 1rem;
   }
 }
 
@@ -46,7 +46,7 @@
     padding-left: 0px;
   }
 
-  .studentDetails{
+  .studentDetails {
     height: 90vh;
   }
   .categoryDetailsContainer {
@@ -57,8 +57,13 @@
   .row {
     grid-template-columns: 1fr;
   }
+
+  .label {
+    font-size: 1.4rem;
+  }
   .value {
     width: 100%;
+    font-size: 1.6rem;
   }
 }
 
