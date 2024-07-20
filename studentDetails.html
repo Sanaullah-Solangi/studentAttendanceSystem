@@ -104,13 +104,26 @@
           <h1
             class="studentDetails-mainHeading m-auto d-flex al-center jc-between"
           >
+            <!--todo======= HEADING TXT =======-->
             student details
+
+            <!--todo======= SEARCH BAR CONTAINER =======-->
             <div class="searchAndEditPanel d-flex jc-center al-center">
-              <i class="fa-solid fa-magnifying-glass white"></i>
-              <i
-                onclick="showModalAndHideUls()"
-                class="fa-solid fa-pen-to-square editBtn white pointer"
-              ></i>
+              <div class="searchPanel d-flex al-center">
+                <!--?=== SEARCH ICON ===-->
+                <i
+                  onclick="toggleSearchBarVisibility()"
+                  class="fa-solid fa-magnifying-glass searchIcon white pointer"
+                ></i>
+                <!--?=== SEARCH INPUT ===-->
+                <input
+                  type="text"
+                  class="searchInput h-100 border-none"
+                  placeholder="enter roll number"
+                />
+              </div>
+              <!--?=== EDIT BTN ===-->
+              <i class="fa-solid fa-pen-to-square editBtn white pointer"></i>
             </div>
           </h1>
           <div class="studentDetailsWrapper d-flex f-wrap">
@@ -121,7 +134,7 @@
               <div class="studentDetailsImg d-flex jc-center al-center">
                 <img
                   src="./assets/images/profile.png"
-                  class=" radius-50per h-100 w-100"
+                  class="radius-50per h-100 w-100"
                   alt=""
                 />
               </div>

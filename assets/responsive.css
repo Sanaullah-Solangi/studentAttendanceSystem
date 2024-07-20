@@ -1,11 +1,12 @@
-@media (width <=1140px){
+@media (width <=1140px) {
   .studentDetailsProfile {
-    flex: 1 1 100%;}
+    flex: 1 1 100%;
+  }
 }
 
 @media (width <=1080px) {
   .studentDetails-mainHeading,
-  .studentDetails {
+  .studentDetailsWrapper {
     width: 100%;
   }
 
@@ -30,8 +31,11 @@
     flex: 1 1 30%;
   }
 
-  .studentDetails {
+  .studentDetailsWrapper {
     padding: 1rem;
+  }
+  .categoryDetailsContainer {
+    padding-top: 1rem;
   }
 }
 
@@ -56,9 +60,6 @@
     padding-left: 0px;
   }
 
-  .studentDetails {
-    height: 90vh;
-  }
   .categoryDetailsContainer {
     left: 5%;
     top: 18%;
@@ -248,6 +249,11 @@
 @media (width <=502px) {
   .dashBoard-item {
     flex: 1 1 50%;
+  }
+}
+@media (width <=470px) {
+  .searchAndEditPanel {
+    gap: .5rem;
   }
 }
 

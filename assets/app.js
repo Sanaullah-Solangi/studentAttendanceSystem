@@ -29,6 +29,9 @@ let editPersonalDetails = document.querySelector(".editPersonalDetails");
 let editEducationalDetails = document.querySelector(".editEducationalDetails");
 let editContactDetails = document.querySelector(".editContactDetails");
 //?=== OTHERS ===
+let searchPanel = document.querySelector(".searchPanel");
+let searchPanelInput = document.querySelector(".searchPanel > input");
+let searchIcon = document.querySelector(".searchIcon");
 let formDataCompleted = true; // FLAG TO CHECK EMPTY INPUT
 
 //! FUNCTION TO TOGGLE THE VISIBILITY OF THE SIDEBAR
@@ -210,6 +213,18 @@ function setActiveHeading(event) {
     toggleEditSection(heading);
   }
 }
+// //! FUNCTION TO TOGGLE THE VISIBILITY OF THE SEARCH BAR ON THE WEBSITE.
+// function toggleSearchBarVisibility() {
+//   if (searchPanel.classList.contains("searchPanel")) {
+//     // searchPanelInput.classList.remove("d-none");
+
+//     searchIcon.classList.add("clickedSearchIcon");
+//     searchPanel.classList.replace("searchPanel", "showSideBar");
+//   } else {
+//     searchIcon.classList.remove("clickedSearchIcon");
+//     searchPanel.classList.replace("showSideBar", "searchPanel");
+//   }
+// }
 
 //! ==============================================
 //! MODAL FUNCTIONALITY
