@@ -20,6 +20,7 @@
   list-style: none;
   scroll-behavior: smooth;
   font-family: "jost";
+  text-transform: capitalize;
 }
 .black {
   color: black;
@@ -40,7 +41,6 @@ html {
 
 .main-container {
   margin-top: 7rem;
-  flex-wrap: wrap;
   height: 100%;
 }
 
@@ -86,6 +86,10 @@ h6,
 
 .d-flex {
   display: flex;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
 }
 
 /*?=== justify content properties ===*/
@@ -531,12 +535,11 @@ header > a > img {
 .dashBoard-content > .dashBoard-cards {
   margin-top: 3rem;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 .dashBoard-item,
-.studentDetails,
+.studentDetailsWrapper,
 .value,
-.studentDetails-mainHeading > i,
+.studentDetails-mainHeading > .searchAndEditPanel > :is(i, .detailsSearchBar),
 .modalContent,
 .modalHeading,
 .modalContainer > i {
@@ -577,23 +580,52 @@ header > a > img {
 
 /*!=============== STUDENTS DATA SECTION ===============*/
 
+.studentDetailsWrapper {
+  background-color: white;
+  padding: 3rem;
+  margin-top: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  gap: 2rem;
+}
+
+.studentDetailsProfile {
+  flex: 1 1 19%;
+  height: 100%;
+}
+
+.studentDetailsName {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+/*?=== MAIN HEADING ===*/
 .studentDetails-mainHeading,
 .studentDetails {
   width: 90%;
 }
 
-/*?=== MAIN HEADING ===*/
-.studentDetails-mainHeading > i {
+/*?=== SEARCH BAR ===*/
+.studentDetails-mainHeading > .searchAndEditPanel {
+  gap: 2rem;
+}
+.studentDetails-mainHeading > .searchAndEditPanel > :is(i, .detailsSearchBar) {
   background-color: var(--mainColor3);
   padding: 1rem;
 }
+
+.studentDetails-mainHeading > .searchAndEditPanel > .detailsSearchBar {
+  width: 300px;
+}
+
+.studentDetails-mainHeading
+  > .searchAndEditPanel
+  > .detailsSearchBar::placeholder {
+  color: rgb(235, 230, 230);
+}
 /*?=== SARI DETAILS KA PARENT DIV ===*/
 .studentDetails {
-  background-color: white;
-  padding: 3rem;
-  margin-top: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   height: 400px;
+  flex: 1 1 70%;
 }
 
 /*!=============== CATEGORY HEADING SECTION ===============*/
@@ -610,10 +642,11 @@ header > a > img {
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   padding: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
+/*?=== MOAL CATEGORY  HEADING ===*/
 .modalContent > .categoryHeadingsContainer > .categoryHeading {
   font-size: 1.5rem;
 }
@@ -630,7 +663,7 @@ header > a > img {
 
 /*?=== DETAILS KA PARENT DIV ===*/
 .categoryDetailsContainer {
-  left: 10%;
+  left: 0%;
   top: 25%;
 }
 
@@ -755,11 +788,11 @@ header > a > img {
 }
 .modalContent > .modalContentBody :is(input, textarea, select),
 .addTodos {
-  border: 2px solid var(--mainColor1);
+  border: 1px solid rgba(103, 86, 133, 0.25);
 }
 
 .modalContent > .modalContentBody :is(input, textarea, select):focus {
-  border: 3px solid var(--mainColor1);
+  border: 1.5px solid rgb(68, 46, 107);
 }
 
 label,

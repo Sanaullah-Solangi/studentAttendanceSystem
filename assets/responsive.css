@@ -1,3 +1,8 @@
+@media (width <=1140px){
+  .studentDetailsProfile {
+    flex: 1 1 100%;}
+}
+
 @media (width <=1080px) {
   .studentDetails-mainHeading,
   .studentDetails {
@@ -5,7 +10,7 @@
   }
 
   .modalContent {
-    width: 80%;
+    width: 95%;
     height: fit-content;
   }
 }

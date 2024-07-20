@@ -29,7 +29,7 @@
     <title>Student Data Overview</title>
   </head>
   <body>
-    <div class="main-container m-auto d-flex vh p-relative">
+    <div class="main-container m-auto d-flex f-wrap vh p-relative">
       <!--!=============== SIDEBAR CONTAINER ===============-->
       <div
         class="sideBar-container p-fixed h-100 transition-3ms"
@@ -105,182 +105,201 @@
             class="studentDetails-mainHeading m-auto d-flex al-center jc-between"
           >
             student details
-            <i
-              onclick="showModalAndHideUls()"
-              class="fa-solid fa-pen-to-square editBtn white pointer"
-            ></i>
-          </h1>
-
-          <!--?=== STUDENTS DETAILS ===-->
-          <div class="studentDetails m-auto p-relative">
-            <!--!=== CATEGORY HEADINGS CONTAINER ===-->
-            <div class="categoryHeadingsContainer d-flex w-100">
-              <!--todo=== PERSONAL DETAILS ===-->
-              <h2
-                onclick="setActiveHeading(event)"
-                class="personalDetailsHeading categoryHeading detailsCategoryHeading txt-center active transition-1ms pointer d-flex jc-center al-center"
-              >
-                <i class="fa-solid fa-person"></i> personal details
-              </h2>
-              <!--todo=== EDUCATIONS DETAILS ===-->
-              <h2
-                onclick="setActiveHeading(event)"
-                class="educationalDetailsHeading categoryHeading detailsCategoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
-              >
-                <i class="fa-solid fa-school"></i> educational details
-              </h2>
-              <!--todo=== CONTACT DETAILS ===-->
-              <h2
-                onclick="setActiveHeading(event)"
-                class="contactDetailsHeading categoryHeading detailsCategoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
-              >
-                <i class="fa-solid fa-address-book"></i> contact details
-              </h2>
+            <div class="searchAndEditPanel d-flex jc-center al-center">
+              <i class="fa-solid fa-magnifying-glass white"></i>
+              <i
+                onclick="showModalAndHideUls()"
+                class="fa-solid fa-pen-to-square editBtn white pointer"
+              ></i>
             </div>
-
-            <!--!=== CATEGORY DETAILS CONTAINER ===-->
+          </h1>
+          <div class="studentDetailsWrapper d-flex f-wrap">
+            <!--?=== STUDENT PROFILE ===-->
             <div
-              class="categoryDetailsContainer transition-3ms d-flex p-absolute"
+              class="studentDetailsProfile d-flex dir-col jc-center al-center h-100 w-100"
             >
-              <!--?=== PERSONAL DETAILS ===-->
-              <div class="personalDetails categoryDetails transition-3ms">
-                <!--todo======= ROW 1 =======-->
-                <div class="row grid grid-two-cols al-center">
-                  <!--?=== COL 1 ===-->
-                  <div class="col studentName w-100 h-100">
-                    <p class="label">name</p>
-                    <p class="value">sanaullah</p>
-                  </div>
-                  <!--?=== COL 2 ===-->
-                  <div class="col fatherName w-100 h-100">
-                    <p class="label">father name</p>
-                    <p class="value">HAJI SHER ALI</p>
-                  </div>
-                </div>
-                <!--todo======= ROW 2 =======-->
-                <div class="row grid grid-two-cols al-center">
-                  <!--?=== COL 1 ===-->
-                  <div class="col emailAddress w-100 h-100">
-                    <p class="label">gender</p>
-                    <p class="value">male</p>
-                  </div>
-
-                  <!--?=== COL 2 ===-->
-                  <div class="col studentName w-100 h-100">
-                    <p class="label">date of birth</p>
-                    <p class="value">5 jan 2000</p>
-                  </div>
-                </div>
-
-                <!--todo======= ROW 3 =======-->
-                <div class="row grid grid-two-cols al-center">
-                  <!--?=== COL 1 ===-->
-                  <div class="col emailAddress w-100 h-100">
-                    <p class="label">roll number</p>
-                    <p class="value">12344</p>
-                  </div>
-
-                  <!--?=== COL 2 ===-->
-                  <div class="col studentName w-100 h-100">
-                    <p class="label">serial number</p>
-                    <p class="value">10</p>
-                  </div>
-                </div>
+              <div class="studentDetailsImg d-flex jc-center al-center">
+                <img
+                  src="./assets/images/profile.png"
+                  class=" radius-50per h-100 w-100"
+                  alt=""
+                />
+              </div>
+              <div class="studentDetailsName poppins txt-center">
+                Muhammad Sanaullah
+              </div>
+            </div>
+            <!--?=== STUDENTS DETAILS ===-->
+            <div class="studentDetails m-auto p-relative">
+              <!--!=== CATEGORY HEADINGS CONTAINER ===-->
+              <div class="categoryHeadingsContainer d-flex w-100">
+                <!--todo=== PERSONAL DETAILS ===-->
+                <h2
+                  onclick="setActiveHeading(event)"
+                  class="personalDetailsHeading categoryHeading detailsCategoryHeading txt-center active transition-1ms pointer d-flex jc-center al-center"
+                >
+                  <i class="fa-solid fa-person"></i> personal details
+                </h2>
+                <!--todo=== EDUCATIONS DETAILS ===-->
+                <h2
+                  onclick="setActiveHeading(event)"
+                  class="educationalDetailsHeading categoryHeading detailsCategoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
+                >
+                  <i class="fa-solid fa-school"></i> educational details
+                </h2>
+                <!--todo=== CONTACT DETAILS ===-->
+                <h2
+                  onclick="setActiveHeading(event)"
+                  class="contactDetailsHeading categoryHeading detailsCategoryHeading txt-center transition-1ms pointer d-flex jc-center al-center"
+                >
+                  <i class="fa-solid fa-address-book"></i> contact details
+                </h2>
               </div>
 
-              <!--?=== EDUCAIONAL DETAILS ===-->
+              <!--!=== CATEGORY DETAILS CONTAINER ===-->
               <div
-                class="educationalDetails categoryDetails transition-3ms opacity0"
+                class="categoryDetailsContainer transition-3ms d-flex p-absolute"
               >
-                <!--todo======= ROW 1 =======-->
-                <div class="row grid grid-two-cols al-center">
-                  <!--?=== COL 1 ===-->
-                  <div class="col emailAddress w-100">
-                    <p class="label">acadamic qualification</p>
-                    <p class="value">metrik</p>
+                <!--?=== PERSONAL DETAILS ===-->
+                <div class="personalDetails categoryDetails transition-3ms">
+                  <!--todo======= ROW 1 =======-->
+                  <div class="row grid grid-two-cols al-center">
+                    <!--?=== COL 1 ===-->
+                    <div class="col studentName w-100 h-100">
+                      <p class="label">name</p>
+                      <p class="value">sanaullah</p>
+                    </div>
+                    <!--?=== COL 2 ===-->
+                    <div class="col fatherName w-100 h-100">
+                      <p class="label">father name</p>
+                      <p class="value">HAJI SHER ALI</p>
+                    </div>
+                  </div>
+                  <!--todo======= ROW 2 =======-->
+                  <div class="row grid grid-two-cols al-center">
+                    <!--?=== COL 1 ===-->
+                    <div class="col emailAddress w-100 h-100">
+                      <p class="label">gender</p>
+                      <p class="value">male</p>
+                    </div>
+
+                    <!--?=== COL 2 ===-->
+                    <div class="col studentName w-100 h-100">
+                      <p class="label">date of birth</p>
+                      <p class="value">5 jan 2000</p>
+                    </div>
                   </div>
 
-                  <!--?=== COL 2 ===-->
-                  <div class="col studentName w-100 h-100">
-                    <p class="label">higher education</p>
-                    <p class="value">intermediate</p>
-                  </div>
-                </div>
-                <!--todo======= ROW 2 =======-->
-                <div class="row grid grid-two-cols al-center">
-                  <!--?=== COL 1 ===-->
-                  <div class="col emailAddress w-100 h-100">
-                    <p class="label">course</p>
-                    <p class="value">web and app development</p>
-                  </div>
+                  <!--todo======= ROW 3 =======-->
+                  <div class="row grid grid-two-cols al-center">
+                    <!--?=== COL 1 ===-->
+                    <div class="col emailAddress w-100 h-100">
+                      <p class="label">roll number</p>
+                      <p class="value">12344</p>
+                    </div>
 
-                  <!--?=== COL 2 ===-->
-                  <div class="col studentName w-100 h-100">
-                    <p class="label">admission date</p>
-                    <p class="value">5 jan 2000</p>
-                  </div>
-                </div>
-
-                <!--todo======= ROW 3 =======-->
-                <div class="row grid grid-two-cols al-center">
-                  <!--?=== COL 1 ===-->
-                  <div class="col emailAddress w-100 h-100">
-                    <p class="label">shift</p>
-                    <p class="value">morning</p>
-                  </div>
-
-                  <!--?=== COL 2 ===-->
-                  <div class="col studentName w-100 h-100">
-                    <p class="label">timing</p>
-                    <p class="value">09 to 11</p>
-                  </div>
-                </div>
-              </div>
-
-              <!--?=== CONTACT DETAILS ===-->
-              <div
-                class="contactDetails categoryDetails transition-3ms opacity0"
-              >
-                <!--todo======= ROW 1 =======-->
-                <div class="row grid grid-two-cols al-center">
-                  <!--?=== COL 1 ===-->
-                  <div class="col emailAddress w-100 h-100">
-                    <p class="label">email address</p>
-                    <p class="value">sanaullahsolangi@gmail.com</p>
-                  </div>
-
-                  <!--?=== COL 2 ===-->
-                  <div class="col mobileNumber w-100 h-100">
-                    <p class="label">mobile number</p>
-                    <p class="value">03102004654</p>
+                    <!--?=== COL 2 ===-->
+                    <div class="col studentName w-100 h-100">
+                      <p class="label">serial number</p>
+                      <p class="value">10</p>
+                    </div>
                   </div>
                 </div>
 
-                <!--todo======= ROW 2 =======-->
-                <div class="row grid grid-two-cols al-center">
-                  <!--?=== COL 1 ===-->
-                  <div class="col emergencyNumber w-100 h-100">
-                    <p class="label">emergency number</p>
-                    <p class="value">03102004654</p>
+                <!--?=== EDUCAIONAL DETAILS ===-->
+                <div
+                  class="educationalDetails categoryDetails transition-3ms opacity0"
+                >
+                  <!--todo======= ROW 1 =======-->
+                  <div class="row grid grid-two-cols al-center">
+                    <!--?=== COL 1 ===-->
+                    <div class="col emailAddress w-100">
+                      <p class="label">acadamic qualification</p>
+                      <p class="value">metrik</p>
+                    </div>
+
+                    <!--?=== COL 2 ===-->
+                    <div class="col studentName w-100 h-100">
+                      <p class="label">higher education</p>
+                      <p class="value">intermediate</p>
+                    </div>
+                  </div>
+                  <!--todo======= ROW 2 =======-->
+                  <div class="row grid grid-two-cols al-center">
+                    <!--?=== COL 1 ===-->
+                    <div class="col emailAddress w-100 h-100">
+                      <p class="label">course</p>
+                      <p class="value">web and app development</p>
+                    </div>
+
+                    <!--?=== COL 2 ===-->
+                    <div class="col studentName w-100 h-100">
+                      <p class="label">admission date</p>
+                      <p class="value">5 jan 2000</p>
+                    </div>
                   </div>
 
-                  <!--?=== COL 2 ===-->
-                  <div class="col campus w-100 h-100">
-                    <p class="label">campus</p>
-                    <p class="value">bahadur abad</p>
+                  <!--todo======= ROW 3 =======-->
+                  <div class="row grid grid-two-cols al-center">
+                    <!--?=== COL 1 ===-->
+                    <div class="col emailAddress w-100 h-100">
+                      <p class="label">shift</p>
+                      <p class="value">morning</p>
+                    </div>
+
+                    <!--?=== COL 2 ===-->
+                    <div class="col studentName w-100 h-100">
+                      <p class="label">timing</p>
+                      <p class="value">09 to 11</p>
+                    </div>
                   </div>
                 </div>
-                <!--todo======= ROW 3 =======-->
-                <div class="row grid grid-two-cols al-center">
-                  <!--?=== COL 1 ===-->
-                  <div class="col emailAddress w-100 h-100">
-                    <p class="label">city</p>
-                    <p class="value">karachi</p>
+
+                <!--?=== CONTACT DETAILS ===-->
+                <div
+                  class="contactDetails categoryDetails transition-3ms opacity0"
+                >
+                  <!--todo======= ROW 1 =======-->
+                  <div class="row grid grid-two-cols al-center">
+                    <!--?=== COL 1 ===-->
+                    <div class="col emailAddress w-100 h-100 txt-none">
+                      <p class="label">email address</p>
+                      <p class="value">sanaullahsolangi@gmail.com</p>
+                    </div>
+
+                    <!--?=== COL 2 ===-->
+                    <div class="col mobileNumber w-100 h-100">
+                      <p class="label">mobile number</p>
+                      <p class="value">03102004654</p>
+                    </div>
                   </div>
-                  <!--?=== COL 1 ===-->
-                  <div class="col emailAddress w-100 h-100">
-                    <p class="label">address</p>
-                    <p class="value">bukhari muhalla mowach goth karachi</p>
+
+                  <!--todo======= ROW 2 =======-->
+                  <div class="row grid grid-two-cols al-center">
+                    <!--?=== COL 1 ===-->
+                    <div class="col emergencyNumber w-100 h-100">
+                      <p class="label">emergency number</p>
+                      <p class="value">03102004654</p>
+                    </div>
+
+                    <!--?=== COL 2 ===-->
+                    <div class="col campus w-100 h-100">
+                      <p class="label">campus</p>
+                      <p class="value">bahadur abad</p>
+                    </div>
+                  </div>
+                  <!--todo======= ROW 3 =======-->
+                  <div class="row grid grid-two-cols al-center">
+                    <!--?=== COL 1 ===-->
+                    <div class="col emailAddress w-100 h-100">
+                      <p class="label">city</p>
+                      <p class="value">karachi</p>
+                    </div>
+                    <!--?=== COL 1 ===-->
+                    <div class="col emailAddress w-100 h-100">
+                      <p class="label">address</p>
+                      <p class="value">bukhari muhalla mowach goth karachi</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -529,6 +548,7 @@
                       >Email Address</label
                     >
                     <input
+                      class="txt-none"
                       value=""
                       type="text"
                       id="modalEmail"
